@@ -1,0 +1,44 @@
+{
+  "description": "Key challenging tablets used for manual quality evaluation of the best models (v12a etc.). ATF excerpts for verification.",
+  "cases": [
+    {
+      "id": "P346140",
+      "name": "Flood Tablet (Gilgamesh) - Literature, Old Babylonian",
+      "atf_lines": [
+        "u4 ri-a u4 su3-u4 ri-a",
+        "ge6 ri-a ge6 bad-ra2 ri-a",
+        "mu ri-a mu su3-u4 ri-a",
+        "u4 nig2-ul-e pa e3-a-ba",
+        "an ki-ta ba-ta-bad-ra2-a-ba"
+      ],
+      "note": "Long narrative literary text. The best models produced almost perfect translations here."
+    },
+    {
+      "id": "P467316",
+      "name": "Tiglath-Pileser Royal Inscription - Royal/Monumental",
+      "atf_lines": [
+        "{d}a-szur _en gal_ mus-te-szir3 kisz-szat _dingir-mesz_",
+        "na-din {gesz}gidri u3 a-ge-e mu-kin2 _man_-ti",
+        "{d}en-lil2 be-lu _man_ gi-mir {d}a-nun-na-ki",
+        "a-bu _dingir-mesz en kur-kur_"
+      ],
+      "note": "Complex royal epithets and formulaic language. Previously a weak point; v12a-style long training made it excellent."
+    },
+    {
+      "id": "P285298",
+      "name": "Evil Hand Syndrome Tablet - Medicine, Neo-Babylonian",
+      "atf_lines": [
+        "DIŠ NA ŠU.GIDIM.MA DAB-su"
+      ],
+      "note": "Medical/diagnostic. The 28-epoch tag-free model handled specialized terminology well."
+    },
+    {
+      "id": "example_stable",
+      "name": "Simple example from stable training tests",
+      "atf_lines": [
+        "BAR# 13 AN.KU₁₀ sin 5 ITU"
+      ],
+      "expected_style": "The 13th, moonrise to sunrise: 5°."
+    }
+  ]
+}
