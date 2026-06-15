@@ -19,13 +19,17 @@ The **stable** tier is the one that "just worked" after earlier FP16 disasters. 
 
 ## Quick Start (Stable Tier — Recommended First)
 
-```bash
-# 1. Create the environment (uv recommended)
-uv init .
-uv add torch transformers datasets accelerate sentencepiece requests tqdm
+uv.lock is committed for reproducible installs (highly recommended for consistent training results across machines).
 
-# or pip
-# pip install -r requirements.txt   (create one with the deps above)
+```bash
+# 1. Clone + set up environment (uses the committed lockfile)
+git clone https://github.com/ixmon/atf-to-english.git
+cd atf-to-english
+uv sync   # creates .venv + installs *exact* versions pinned in uv.lock
+
+# Fallbacks
+# uv pip install -r pyproject.toml
+# pip install -r requirements.txt   # for plain pip or the NGC container below
 
 # 2. Get data (the exact source used for the original good models)
 uv run python download_pairs.py --small   # fast POC (~200 pairs)
@@ -65,7 +69,7 @@ On machines where normal PyTorch wheels don't have good CUDA (certain ARM64/Blac
 
 ## Hardware Notes & the NGC Container (what actually worked)
 
-On normal x86 + recent CUDA you can usually just `uv run`.
+On normal x86 + recent CUDA you can usually just `uv run` (after `uv sync`).
 
 On the hardware where many of the stability lessons were learned (NVIDIA Grace-Blackwell etc.), stock PyPI torch lacked proper wheels. The reliable invocation was:
 
@@ -75,6 +79,8 @@ docker run --rm --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=6710886
   nvcr.io/nvidia/pytorch:25.01-py3 \
   bash -c "pip install -q datasets sentencepiece accelerate transformers && python train.py ..."
 ```
+
+**Note**: The NGC path uses direct `pip install` (see `scripts/run_on_ngc.sh`). It intentionally bypasses `uv.lock` because that container image manages its own Python environment.
 
 See `scripts/run_on_ngc.sh` for the exact flags + env passthrough used for the long 28-epoch run.
 
@@ -110,6 +116,7 @@ The training signal for the 28-epoch run was that validation loss was *still imp
 - `infer.py` — clean tag-free inference (the path that won on manual eval).
 - `scripts/run_on_ngc.sh` — the container command that actually produced the record long-training result.
 - `data/key_test_cases.json` — the three hard tablets + examples for verification.
+- `uv.lock` — committed for exact, reproducible dependency installs across machines (used by `uv sync`).
 
 Everything else (multiple historical train_* scripts, giant checkpoint dirs, logs, vendored platforms, vision OCR experiments) has been stripped away.
 
