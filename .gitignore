@@ -84,7 +84,12 @@ Thumbs.db
 # UV / package managers
 # Note: uv.lock is committed for reproducibility (recommended for this project)
 
-# Large generated data (do not commit the full eBL extracts)
+# Generated data from the eBL downloader (can be large; full extracts are tens of MB+).
+# Only the small committed test cases should live in the repo.
+data/*
+!data/key_test_cases.json
+
+# (Legacy specific names kept for extra safety)
 data/ebl_fragments.json
 data/ebl_pairs.json
 data/*.jsonl

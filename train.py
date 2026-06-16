@@ -35,7 +35,13 @@ import os
 from pathlib import Path
 
 from datasets import Dataset
-from transformers import T5Tokenizer, T5ForConditionalGeneration, Trainer, TrainingArguments
+from transformers import (
+    T5Tokenizer,
+    T5ForConditionalGeneration,
+    Trainer,
+    TrainingArguments,
+    DataCollatorForSeq2Seq,
+)
 import torch
 
 # --------------------------- Config & Tier Selection ---------------------------
@@ -71,8 +77,8 @@ def get_config():
         max_samples = args.max_samples or int(os.environ.get("MAX_SAMPLES", 0))  # 0 = all
         epochs = args.epochs or int(os.environ.get("EPOCHS", 28))
         lr = float(os.environ.get("LEARNING_RATE", "3e-4"))
-        batch = int(os.environ.get("BATCH_SIZE", 32))
-        grad_accum = 1
+        batch = int(os.environ.get("BATCH_SIZE", 16))
+        grad_accum = 2  # effective batch = 16×2 = 32 (matches original recipe, half the peak memory)
         max_len = int(os.environ.get("MAX_LENGTH", 256))
         patience = int(os.environ.get("EARLY_STOPPING_PATIENCE", 5))
         prompt_prefix = "translate Akkadian to English: "   # the version used in the successful long runs
@@ -146,13 +152,11 @@ def main():
     def preprocess(examples):
         inputs = tokenizer(
             examples["input_text"],
-            padding="max_length",
             truncation=True,
             max_length=cfg["max_len"],
         )
         labels = tokenizer(
             examples["target_text"],
-            padding="max_length",
             truncation=True,
             max_length=cfg["max_len"],
         )
@@ -180,15 +184,15 @@ def main():
 
         logging_steps=50,
         eval_strategy="steps",
-        eval_steps=500,
+        eval_steps=1000,
         save_strategy="steps",
-        save_steps=500,
-        save_total_limit=5,
+        save_steps=1000,
+        save_total_limit=3,
         load_best_model_at_end=True,
         metric_for_best_model="eval_loss",
         greater_is_better=False,
         report_to="none",
-        dataloader_num_workers=4,
+        dataloader_num_workers=0,       # CRITICAL: avoid fork-based memory duplication on unified memory (GB10)
     )
 
     # Early stopping via the Trainer callback if patience > 0
@@ -197,11 +201,16 @@ def main():
         from transformers import EarlyStoppingCallback
         callbacks.append(EarlyStoppingCallback(early_stopping_patience=cfg["patience"]))
 
+    # Dynamic padding — only pad to the longest sample in each batch, not globally to max_length.
+    # This massively reduces memory vs the old padding="max_length" approach.
+    data_collator = DataCollatorForSeq2Seq(tokenizer, model=model, padding=True)
+
     trainer = Trainer(
         model=model,
         args=training_args,
         train_dataset=tokenized["train"],
         eval_dataset=tokenized["test"],
+        data_collator=data_collator,
         callbacks=callbacks,
     )
 

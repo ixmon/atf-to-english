@@ -1,0 +1,402 @@
+{
+  "model": "praeclarum/cuneiform",
+  "main_quality_score": 0.19968346253229974,
+  "p467316_quality_score": 0.8454166666666667,
+  "main_results": {
+    "name": "CuneiformTranslators - Standard Suite",
+    "total": 24,
+    "exact_matches": 0,
+    "keyword_hits": 12,
+    "keyword_total": 43,
+    "overlap_scores": [
+      0.4,
+      0.0,
+      0.28571428571428575,
+      0.5714285714285715,
+      0.5,
+      0.28571428571428575,
+      0.0,
+      0.8571428571428571,
+      0.2,
+      0.0,
+      0.2,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.22222222222222224,
+      0.0
+    ],
+    "nonsense_count": 0,
+    "by_genre": {
+      "Astronomy": {
+        "total": 2,
+        "keyword_hits": 3,
+        "keyword_total": 5
+      },
+      "Celestial": {
+        "total": 1,
+        "keyword_hits": 1,
+        "keyword_total": 2
+      },
+      "Archival": {
+        "total": 3,
+        "keyword_hits": 4,
+        "keyword_total": 6
+      },
+      "Medicine": {
+        "total": 4,
+        "keyword_hits": 2,
+        "keyword_total": 8
+      },
+      "Divination": {
+        "total": 2,
+        "keyword_hits": 0,
+        "keyword_total": 3
+      },
+      "Lexicography": {
+        "total": 4,
+        "keyword_hits": 0,
+        "keyword_total": 6
+      },
+      "Magic": {
+        "total": 1,
+        "keyword_hits": 0,
+        "keyword_total": 1
+      },
+      "Ritual": {
+        "total": 2,
+        "keyword_hits": 0,
+        "keyword_total": 3
+      },
+      "Literature": {
+        "total": 2,
+        "keyword_hits": 0,
+        "keyword_total": 3
+      },
+      "Generic": {
+        "total": 2,
+        "keyword_hits": 2,
+        "keyword_total": 4
+      },
+      "Technical": {
+        "total": 1,
+        "keyword_hits": 0,
+        "keyword_total": 2
+      }
+    },
+    "by_period": {
+      "Neo-Babylonian": {
+        "total": 14,
+        "keyword_hits": 6,
+        "keyword_total": 25
+      },
+      "Hellenistic": {
+        "total": 1,
+        "keyword_hits": 0,
+        "keyword_total": 2
+      },
+      "Ur-III": {
+        "total": 3,
+        "keyword_hits": 4,
+        "keyword_total": 6
+      },
+      "Generic": {
+        "total": 6,
+        "keyword_hits": 2,
+        "keyword_total": 10
+      }
+    },
+    "details": [
+      {
+        "atf": "GE\u2086 14 sin SU",
+        "expected": "night 14 moon set",
+        "predicted": "Night of the 14th, the moon was ...",
+        "exact_match": false,
+        "keyword_hits": 3,
+        "keyword_total": 3,
+        "overlap_score": 0.4
+      },
+      {
+        "atf": "MUL\u2082.BABBAR ina GIR\u2083.TAB IGI",
+        "expected": "jupiter first appearance scorpius",
+        "predicted": "MUL2.BABBAR in the 'GIR3-TAB IGI'",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 2,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "AN.KU\u2081\u2080 sin",
+        "expected": "eclipse moon",
+        "predicted": "AN.KU means \"the moon.\"",
+        "exact_match": false,
+        "keyword_hits": 1,
+        "keyword_total": 2,
+        "overlap_score": 0.28571428571428575
+      },
+      {
+        "atf": "3 udu niga",
+        "expected": "3 fattened sheep",
+        "predicted": "3 sheep, grain-fed,",
+        "exact_match": false,
+        "keyword_hits": 2,
+        "keyword_total": 2,
+        "overlap_score": 0.5714285714285715
+      },
+      {
+        "atf": "1 gu\u2084",
+        "expected": "1 ox",
+        "predicted": "1 bull",
+        "exact_match": false,
+        "keyword_hits": 1,
+        "keyword_total": 2,
+        "overlap_score": 0.5
+      },
+      {
+        "atf": "5 sila\u2083 \u0161e",
+        "expected": "5 liters barley",
+        "predicted": "5 sila3 e-wax",
+        "exact_match": false,
+        "keyword_hits": 1,
+        "keyword_total": 2,
+        "overlap_score": 0.28571428571428575
+      },
+      {
+        "atf": "DI\u0160 NA GIG",
+        "expected": "if a man is sick",
+        "predicted": "DI'u, the black-headed,",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 3,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "szu gidim-ma",
+        "expected": "hand of ghost",
+        "predicted": "Hand of a ghost",
+        "exact_match": false,
+        "keyword_hits": 2,
+        "keyword_total": 2,
+        "overlap_score": 0.8571428571428571
+      },
+      {
+        "atf": "ina \u00cc.GI\u0160 S\u00daD",
+        "expected": "crush in oil",
+        "predicted": "in the city of GI.GI.S.D.",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 1,
+        "overlap_score": 0.2
+      },
+      {
+        "atf": "\u0161umma izbu",
+        "expected": "if anomaly",
+        "predicted": "Umma izbu.",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 1,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "DI\u0160 NA ina \u0160\u00c0.BI",
+        "expected": "if a man in his belly",
+        "predicted": "DI, na, in .BI.",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 2,
+        "overlap_score": 0.2
+      },
+      {
+        "atf": "LUGAL",
+        "expected": "king",
+        "predicted": "a kind of profession",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 1,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "DUMU",
+        "expected": "son",
+        "predicted": "a kind of insect",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 1,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "AN",
+        "expected": "sky",
+        "predicted": "a kind of insect",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 3,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "A",
+        "expected": "water",
+        "predicted": "A",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 1,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "\u00c9N",
+        "expected": "incantation",
+        "predicted": "a kind of insect",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 1,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "KA.INIM.MA",
+        "expected": "incantation formula",
+        "predicted": "KA.INIM.MA",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 1,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "en\u016bma eli\u0161",
+        "expected": "when on high",
+        "predicted": "Enuma, Eli'u.",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 2,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "1(di\u0161)",
+        "expected": "one",
+        "predicted": "1 jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per jug of barley per sag of barley per sag of barley per sag of barley per sag of barley per sag of barley per sag of barley per sag of barley per sag of barley per sag of barley per sag of barley per sag of barley per sag of barley per sag of barley per sag of barley per sag of barley per sag of barley per sag",
+        "exact_match": false,
+        "keyword_hits": 1,
+        "keyword_total": 2,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "10",
+        "expected": "ten",
+        "predicted": "0;00 10",
+        "exact_match": false,
+        "keyword_hits": 1,
+        "keyword_total": 2,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "{u2}kur-ra",
+        "expected": "plant from mountain",
+        "predicted": "a kind of profession",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 2,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "{na}gug",
+        "expected": "carnelian",
+        "predicted": "a kind of tree",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 2,
+        "overlap_score": 0.0
+      },
+      {
+        "atf": "ana tar\u1e63i",
+        "expected": "in the time of",
+        "predicted": "to the king, my lord.",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 1,
+        "overlap_score": 0.22222222222222224
+      },
+      {
+        "atf": "te-qi2-tu",
+        "expected": "ransom payment",
+        "predicted": "a kind of profession",
+        "exact_match": false,
+        "keyword_hits": 0,
+        "keyword_total": 2,
+        "overlap_score": 0.0
+      }
+    ]
+  },
+  "p467316_results": {
+    "name": "CuneiformTranslators - P467316",
+    "total": 4,
+    "exact_matches": 1,
+    "keyword_hits": 13,
+    "keyword_total": 15,
+    "overlap_scores": [
+      0.7,
+      0.8750000000000001,
+      0.75,
+      1.0
+    ],
+    "nonsense_count": 0,
+    "by_genre": {
+      "Literature": {
+        "total": 4,
+        "keyword_hits": 13,
+        "keyword_total": 15
+      }
+    },
+    "by_period": {
+      "Middle-Assyrian": {
+        "total": 4,
+        "keyword_hits": 13,
+        "keyword_total": 15
+      }
+    },
+    "details": [
+      {
+        "atf": "{d}a-szur _en gal_ mus-te-szir3 kisz-szat _dingir-mesz_",
+        "expected": "Ashur, great lord, who makes the totality of the gods submit",
+        "predicted": "Id\u00e2-Assur, great lord, who guides the totality of the gods,",
+        "exact_match": false,
+        "keyword_hits": 3,
+        "keyword_total": 4,
+        "overlap_score": 0.7
+      },
+      {
+        "atf": "na-din {gesz}gidri u3 a-ge-e mu-kin2 _man_-ti",
+        "expected": "who gives scepter and crown, who establishes kingship",
+        "predicted": "the one who gives the scepter and the crown, the one who establishes kingship,",
+        "exact_match": false,
+        "keyword_hits": 3,
+        "keyword_total": 3,
+        "overlap_score": 0.8750000000000001
+      },
+      {
+        "atf": "{d}en-lil2 be-lu _man_ gi-mir {d}a-nun-na-ki",
+        "expected": "Enlil, lord, king of all the Anunnaku gods",
+        "predicted": "Enlil, lord, king of all the inhabited world.",
+        "exact_match": false,
+        "keyword_hits": 3,
+        "keyword_total": 4,
+        "overlap_score": 0.75
+      },
+      {
+        "atf": "a-bu _dingir-mesz en kur-kur_",
+        "expected": "father of the gods, lord of the lands",
+        "predicted": "Father of the gods, lord of the lands,",
+        "exact_match": true,
+        "keyword_hits": 4,
+        "keyword_total": 4,
+        "overlap_score": 1.0
+      }
+    ]
+  }
+}

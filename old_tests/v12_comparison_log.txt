@@ -1,0 +1,383 @@
+
+=============
+== PyTorch ==
+=============
+
+NVIDIA Release 25.01 (build 134983854)
+PyTorch Version 2.6.0a0+ecf3bae
+Container image Copyright (c) 2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+Copyright (c) 2014-2024 Facebook Inc.
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+Copyright (c) 2015      Google Inc.
+Copyright (c) 2015      Yangqing Jia
+Copyright (c) 2013-2016 The Caffe contributors
+All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+WARNING: Detected NVIDIA GB10 GPU, which may not yet be supported in this version of the container
+
+DEPRECATION: Loading egg at /usr/local/lib/python3.12/dist-packages/dill-0.3.9-py3.12.egg is deprecated. pip 25.1 will enforce this behaviour change. A possible replacement is to use pip for package installation. Discussion can be found at https://github.com/pypa/pip/issues/12330
+DEPRECATION: Loading egg at /usr/local/lib/python3.12/dist-packages/looseversion-1.3.0-py3.12.egg is deprecated. pip 25.1 will enforce this behaviour change. A possible replacement is to use pip for package installation. Discussion can be found at https://github.com/pypa/pip/issues/12330
+DEPRECATION: Loading egg at /usr/local/lib/python3.12/dist-packages/lightning_utilities-0.12.0.dev0-py3.12.egg is deprecated. pip 25.1 will enforce this behaviour change. A possible replacement is to use pip for package installation. Discussion can be found at https://github.com/pypa/pip/issues/12330
+DEPRECATION: Loading egg at /usr/local/lib/python3.12/dist-packages/lightning_thunder-0.2.0.dev0-py3.12.egg is deprecated. pip 25.1 will enforce this behaviour change. A possible replacement is to use pip for package installation. Discussion can be found at https://github.com/pypa/pip/issues/12330
+DEPRECATION: Loading egg at /usr/local/lib/python3.12/dist-packages/opt_einsum-3.4.0-py3.12.egg is deprecated. pip 25.1 will enforce this behaviour change. A possible replacement is to use pip for package installation. Discussion can be found at https://github.com/pypa/pip/issues/12330
+DEPRECATION: Loading egg at /usr/local/lib/python3.12/dist-packages/nvfuser-0.2.23a0+6627725-py3.12-linux-aarch64.egg is deprecated. pip 25.1 will enforce this behaviour change. A possible replacement is to use pip for package installation. Discussion can be found at https://github.com/pypa/pip/issues/12330
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+cudf 24.10.0 requires pyarrow<18.0.0a0,>=14.0.0, but you have pyarrow 22.0.0 which is incompatible.
+pylibcudf 24.10.0 requires pyarrow<18.0.0a0,>=14.0.0, but you have pyarrow 22.0.0 which is incompatible.
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 24.3.1 -> 25.3
+[notice] To update, run: python -m pip install --upgrade pip
+======================================================================
+v12 Model Comparison Test
+======================================================================
+
+======================================================================
+Testing v12a (tag-free, like CuneiformTranslators)
+======================================================================
+Loading model from models/atf-translator-v12a-tagfree-final...
+Model loaded on cuda
+
+📊 Standard Test Suite:
+
+======================================================================
+TEST RESULTS: v12a
+======================================================================
+
+📊 OVERALL METRICS:
+   Total test cases:     24
+   Exact matches:        5/24 (20.8%)
+   Keyword accuracy:     25/43 (58.1%)
+   Avg word overlap:     0.49
+   Nonsense outputs:     0/24 (0.0%)
+
+   ⭐ QUALITY SCORE:      49.4/100
+
+📚 BY GENRE:
+   Archival                  6/6 (100%)
+   Astronomy                 5/5 (100%)
+   Celestial                 1/2 (50%)
+   Divination                3/3 (100%)
+   Generic                   2/4 (50%)
+   Lexicography              2/6 (33%)
+   Literature                0/3 (0%)
+   Magic                     1/1 (100%)
+   Medicine                  4/8 (50%)
+   Ritual                    1/3 (33%)
+   Technical                 0/2 (0%)
+
+📅 BY PERIOD:
+   Generic                   4/10 (40%)
+   Hellenistic               2/2 (100%)
+   Neo-Babylonian            13/25 (52%)
+   Ur-III                    6/6 (100%)
+
+📝 SAMPLE OUTPUTS:
+
+   [Neo-Babylonian|Astronomy]
+   ATF:      GE₆ 14 sin SU
+   Expected: night 14 moon set
+   Got:      Night of the 14, the moon set
+   ~ Keywords: 3/3, Overlap: 0.80
+
+   [Hellenistic|Astronomy]
+   ATF:      MUL₂.BABBAR ina GIR₃.TAB IGI
+   Expected: jupiter first appearance scorpius
+   Got:      Jupiter was visible in Scorpius.
+   ~ Keywords: 2/2, Overlap: 0.44
+
+   [Neo-Babylonian|Celestial]
+   ATF:      AN.KU₁₀ sin
+   Expected: eclipse moon
+   Got:      lunar eclipse
+   ~ Keywords: 1/2, Overlap: 0.50
+
+   [Ur-III|Archival]
+   ATF:      3 udu niga
+   Expected: 3 fattened sheep
+   Got:      3 fattened sheep(s),
+   ~ Keywords: 2/2, Overlap: 0.86
+
+   [Ur-III|Archival]
+   ATF:      1 gu₄
+   Expected: 1 ox
+   Got:      1 ox
+   ✓ Keywords: 2/2, Overlap: 1.00
+
+   [Ur-III|Archival]
+   ATF:      5 sila₃ še
+   Expected: 5 liters barley
+   Got:      5 sila3 barley
+   ~ Keywords: 2/2, Overlap: 0.67
+
+   [Neo-Babylonian|Medicine]
+   ATF:      DIŠ NA GIG
+   Expected: if a man is sick
+   Got:      If a man is seized by hand
+   ~ Keywords: 2/3, Overlap: 0.67
+
+   [Neo-Babylonian|Medicine]
+   ATF:      szu gidim-ma
+   Expected: hand of ghost
+   Got:      Hand of a Ghost
+   ~ Keywords: 2/2, Overlap: 0.86
+
+   [Neo-Babylonian|Medicine]
+   ATF:      ina Ì.GIŠ SÚD
+   Expected: crush in oil
+   Got:      in a reed basket
+   ~ Keywords: 0/1, Overlap: 0.29
+
+   [Neo-Babylonian|Divination]
+   ATF:      šumma izbu
+   Expected: if anomaly
+   Got:      If an anomaly
+   ~ Keywords: 1/1, Overlap: 0.80
+
+📊 P467316 Royal Inscription Test:
+
+======================================================================
+TEST RESULTS: v12a-P467316
+======================================================================
+
+📊 OVERALL METRICS:
+   Total test cases:     4
+   Exact matches:        0/4 (0.0%)
+   Keyword accuracy:     10/15 (66.7%)
+   Avg word overlap:     0.59
+   Nonsense outputs:     0/4 (0.0%)
+
+   ⭐ QUALITY SCORE:      48.4/100
+
+📚 BY GENRE:
+   Literature                10/15 (67%)
+
+📅 BY PERIOD:
+   Middle-Assyrian           10/15 (67%)
+
+📝 SAMPLE OUTPUTS:
+
+   [Middle-Assyrian|Literature]
+   ATF:      {d}a-szur _en gal_ mus-te-szir3 kisz-szat _dingir-mesz_
+   Expected: Ashur, great lord, who makes the totality of the gods submit
+   Got:      Aur, great lord, the one who reveres all the gods,
+   ~ Keywords: 3/4, Overlap: 0.53
+
+   [Middle-Assyrian|Literature]
+   ATF:      na-din {gesz}gidri u3 a-ge-e mu-kin2 _man_-ti
+   Expected: who gives scepter and crown, who establishes kingship
+   Got:      The naddin of the gidr and age, the one who oversees the rulership
+   ~ Keywords: 0/3, Overlap: 0.24
+
+   [Middle-Assyrian|Literature]
+   ATF:      {d}en-lil2 be-lu _man_ gi-mir {d}a-nun-na-ki
+   Expected: Enlil, lord, king of all the Anunnaku gods
+   Got:      Enlil, the lord, king of the universe, Anunnaki
+   ~ Keywords: 3/4, Overlap: 0.67
+
+   [Middle-Assyrian|Literature]
+   ATF:      a-bu _dingir-mesz en kur-kur_
+   Expected: father of the gods, lord of the lands
+   Got:      Father of the gods, lord of all the lands
+   ~ Keywords: 4/4, Overlap: 0.92
+
+======================================================================
+Testing v12b (tagged, with period/genre)
+======================================================================
+Loading model from models/atf-translator-v12b-tagged-final...
+Model loaded on cuda
+
+📊 Standard Test Suite:
+
+======================================================================
+TEST RESULTS: v12b
+======================================================================
+
+📊 OVERALL METRICS:
+   Total test cases:     24
+   Exact matches:        3/24 (12.5%)
+   Keyword accuracy:     24/43 (55.8%)
+   Avg word overlap:     0.45
+   Nonsense outputs:     0/24 (0.0%)
+
+   ⭐ QUALITY SCORE:      45.1/100
+
+📚 BY GENRE:
+   Archival                  5/6 (83%)
+   Astronomy                 5/5 (100%)
+   Celestial                 1/2 (50%)
+   Divination                3/3 (100%)
+   Generic                   2/4 (50%)
+   Lexicography              2/6 (33%)
+   Literature                0/3 (0%)
+   Magic                     1/1 (100%)
+   Medicine                  5/8 (62%)
+   Ritual                    0/3 (0%)
+   Technical                 0/2 (0%)
+
+📅 BY PERIOD:
+   Generic                   4/10 (40%)
+   Hellenistic               2/2 (100%)
+   Neo-Babylonian            13/25 (52%)
+   Ur-III                    5/6 (83%)
+
+📝 SAMPLE OUTPUTS:
+
+   [Neo-Babylonian|Astronomy]
+   ATF:      GE₆ 14 sin SU
+   Expected: night 14 moon set
+   Got:      Night of the 14, the moon set
+   ~ Keywords: 3/3, Overlap: 0.80
+
+   [Hellenistic|Astronomy]
+   ATF:      MUL₂.BABBAR ina GIR₃.TAB IGI
+   Expected: jupiter first appearance scorpius
+   Got:      Jupiter was first visible in Scorpius
+   ~ Keywords: 2/2, Overlap: 0.60
+
+   [Neo-Babylonian|Celestial]
+   ATF:      AN.KU₁₀ sin
+   Expected: eclipse moon
+   Got:      eclipse
+   ~ Keywords: 1/2, Overlap: 0.67
+
+   [Ur-III|Archival]
+   ATF:      3 udu niga
+   Expected: 3 fattened sheep
+   Got:      3 fattened sheep(s),
+   ~ Keywords: 2/2, Overlap: 0.86
+
+   [Ur-III|Archival]
+   ATF:      1 gu₄
+   Expected: 1 ox
+   Got:      1 bull
+   ~ Keywords: 1/2, Overlap: 0.50
+
+   [Ur-III|Archival]
+   ATF:      5 sila₃ še
+   Expected: 5 liters barley
+   Got:      5 sila3 barley
+   ~ Keywords: 2/2, Overlap: 0.67
+
+   [Neo-Babylonian|Medicine]
+   ATF:      DIŠ NA GIG
+   Expected: if a man is sick
+   Got:      If a man is seized by Hand
+   ~ Keywords: 2/3, Overlap: 0.67
+
+   [Neo-Babylonian|Medicine]
+   ATF:      szu gidim-ma
+   Expected: hand of ghost
+   Got:      Hand of a Ghost
+   ~ Keywords: 2/2, Overlap: 0.86
+
+   [Neo-Babylonian|Medicine]
+   ATF:      ina Ì.GIŠ SÚD
+   Expected: crush in oil
+   Got:      is present in the body
+   ~ Keywords: 0/1, Overlap: 0.25
+
+   [Neo-Babylonian|Divination]
+   ATF:      šumma izbu
+   Expected: if anomaly
+   Got:      If an anomaly
+   ~ Keywords: 1/1, Overlap: 0.80
+
+📊 P467316 Royal Inscription Test:
+
+======================================================================
+TEST RESULTS: v12b-P467316
+======================================================================
+
+📊 OVERALL METRICS:
+   Total test cases:     4
+   Exact matches:        0/4 (0.0%)
+   Keyword accuracy:     10/15 (66.7%)
+   Avg word overlap:     0.61
+   Nonsense outputs:     0/4 (0.0%)
+
+   ⭐ QUALITY SCORE:      49.0/100
+
+📚 BY GENRE:
+   Literature                10/15 (67%)
+
+📅 BY PERIOD:
+   Middle-Assyrian           10/15 (67%)
+
+📝 SAMPLE OUTPUTS:
+
+   [Middle-Assyrian|Literature]
+   ATF:      {d}a-szur _en gal_ mus-te-szir3 kisz-szat _dingir-mesz_
+   Expected: Ashur, great lord, who makes the totality of the gods submit
+   Got:      Aur, great lord, the one who provides for all the gods
+   ~ Keywords: 3/4, Overlap: 0.50
+
+   [Middle-Assyrian|Literature]
+   ATF:      na-din {gesz}gidri u3 a-ge-e mu-kin2 _man_-ti
+   Expected: who gives scepter and crown, who establishes kingship
+   Got:      the one who fashioned the chariot and a king's boat
+   ~ Keywords: 0/3, Overlap: 0.24
+
+   [Middle-Assyrian|Literature]
+   ATF:      {d}en-lil2 be-lu _man_ gi-mir {d}a-nun-na-ki
+   Expected: Enlil, lord, king of all the Anunnaku gods
+   Got:      Enlil, the lord, king of the Anunnaki gods,
+   ~ Keywords: 3/4, Overlap: 0.80
+
+   [Middle-Assyrian|Literature]
+   ATF:      a-bu _dingir-mesz en kur-kur_
+   Expected: father of the gods, lord of the lands
+   Got:      father of the gods, lord of all the lands
+   ~ Keywords: 4/4, Overlap: 0.92
+
+======================================================================
+Testing CuneiformTranslators (praeclarum/cuneiform)
+======================================================================
+
+📊 P467316 Royal Inscription Test:
+
+ATF: {d}a-szur _en gal_ mus-te-szir3 kisz-szat _dingir-mesz_
+Expected: Ashur, great lord, who makes the totality of the gods submit
+CT:       ERROR: [Errno 2] No such file or directory: 'data/CuneiformTranslators/venv/bin/python'
+Keywords: 0/4, Overlap: 0.00
+
+ATF: na-din {gesz}gidri u3 a-ge-e mu-kin2 _man_-ti
+Expected: who gives scepter and crown, who establishes kingship
+CT:       ERROR: [Errno 2] No such file or directory: 'data/CuneiformTranslators/venv/bin/python'
+Keywords: 0/3, Overlap: 0.00
+
+ATF: {d}en-lil2 be-lu _man_ gi-mir {d}a-nun-na-ki
+Expected: Enlil, lord, king of all the Anunnaku gods
+CT:       ERROR: [Errno 2] No such file or directory: 'data/CuneiformTranslators/venv/bin/python'
+Keywords: 0/4, Overlap: 0.00
+
+ATF: a-bu _dingir-mesz en kur-kur_
+Expected: father of the gods, lord of the lands
+CT:       ERROR: [Errno 2] No such file or directory: 'data/CuneiformTranslators/venv/bin/python'
+Keywords: 0/4, Overlap: 0.00
+
+📊 CuneiformTranslators Summary:
+Keyword Accuracy: 0.0%
+Average Overlap: 0.0%
+Quality Score: 0.0/100
+
+💾 Results saved to tests/v12_comparison_results.json
+
+======================================================================
+SUMMARY COMPARISON
+======================================================================
+v12a (tag-free):     49.4/100
+v12b (tagged):       45.1/100
+CuneiformTranslators: 0.0/100
+======================================================================
