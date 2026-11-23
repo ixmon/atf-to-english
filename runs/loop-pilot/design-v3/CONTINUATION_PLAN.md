@@ -4,6 +4,11 @@ Drafted 4:14 PM America/New_York on Nov 22, 2026. CPU-only planning. No training
 
 This is a design, not an approval to train. Every new training run or GPU use still needs an explicit OK.
 
+Updated 3:20 AM EST (America/New_York) on Nov 23, 2026, after the gloss expansion and reverse-check comparison (CPU only; still not a launch).
+
+**Arm B should use the expanded `filter_v3` `--paraphrase strict --gloss-tier per_sign` set (1,302 lines, 88.0% of the old 1,479), not reverse-strict and not lenient.** Reverse stays a FLAG. The flat corpus vocab is not a drop rule. A third arm is not recommended: forward-strict already recovered 203 lines vs the pre-expansion 1,099, matches reverse on the 30-line panel (14/16 real errors, no gloss false flag on the 3 paraphrases), and is less jumpy on conjugations. Same seeds, 5,000 steps, 1,000-step cadence, and ~7.5–8.5 GPU-hour estimate as below. Every GPU run still needs an explicit OK.
+
+
 ## Why this shape
 
 v3-r1 **ctrl** (`models/clean-bysa-best`) passed the 965-line official gate vs v4e (**+0.60 [0.14, 1.07]**, p_le0=0.006) and is the current internal best clean model. Arm S (loop pairs selected with filter v2) did **not** help (S 33.73 vs ctrl 34.02). The pairs will change under filter v3, so the training sweet spot may change too — hence a paired continuation from the same ctrl checkpoint, with and without the new strict-filtered pseudo-labels, before any quality-beyond-chrF (lenient) phase.
@@ -20,12 +25,12 @@ Both arms start from `models/clean-bysa-best` (= `models/clean-bysa-loop-v3-r1-c
 ### Arm B pairs
 
 - Source: v3-r1 `qwen_improve` English, kept only if the **strict** filter v3 keep rule holds (disagreement, confidence high/medium, word cap, judge ∈ {better, equivalent}, and filter v3 `--paraphrase strict`).
-- Offline count (this draft): **1099** lines (74.3% of the old 1479). Under the 5% draw cap at CAP 2, as before.
-- **Prefer genres where the v3-r1 ctrl gate did not beat v4e** (point estimate ≤ 0 or clearly trailing): **lexical** (−0.58, n=180), **other** (−0.41, n=60), **OB literary** (−0.08, n=126). In the strict keep set those buckets are 109 lexical / 161 literary / 9 Other. Do not drop the rest of the 1099 if that would leave a thin failed-genre-only set (well under ~400). Instead **up-weight** failed-genre rows in the CAP-2 interleave (e.g. draw them twice as often as admin), and keep a cap so admin cannot dominate the added pairs.
+- Offline count (this draft, after the 2026-11-23 gloss expansion): **1302** lines (88.0% of the old 1479). Under the 5% draw cap at CAP 2, as before.
+- **Prefer genres where the v3-r1 ctrl gate did not beat v4e** (point estimate ≤ 0 or clearly trailing): **lexical** (−0.58, n=180), **other** (−0.41, n=60), **OB literary** (−0.08, n=126). In the expanded strict-per-sign keep set those buckets are 130 lexical / 192 literary / 9 Other. Do not drop the rest of the 1099 if that would leave a thin failed-genre-only set (well under ~400). Instead **up-weight** failed-genre rows in the CAP-2 interleave (e.g. draw them twice as often as admin), and keep a cap so admin cannot dominate the added pairs.
 - **Skip stub references.** The 5k pool has no human refs, but do not add or train on “No translation possible/warranted” (or “No translation possible”) lines if any appear in a mix or in eval teacher-forcing. The 40/965 gate placeholders stay eval-only and are never training targets.
 - Fair-eval tablets stay blocked (existing `fair_blocked_tablets.json`). No ETCSL/eBL in training.
 
-Lenient-mode pairs are **not** in this run. They are for a later quality phase, once chrF gains on the official gate stall.
+Lenient-mode pairs, and reverse-strict pairs, are **not** in this run. They are for a later quality phase, once chrF gains on the official gate stall.
 
 ## Recipe (same seeds and schedule as v3-r1 ctrl)
 

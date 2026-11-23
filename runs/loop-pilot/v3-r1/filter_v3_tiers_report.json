@@ -1,0 +1,3047 @@
+{
+  "written": "2026-11-23 03:15 EST",
+  "n_pool": 5000,
+  "n_arm_s": 1479,
+  "mine_meta": {
+    "source_train": "runs/clean-bysa-v4e/train.json",
+    "license_note": "Clean CC BY-SA training pairs (runs/clean-bysa-v4e/train.json) plus clean ORACC/ePSD-style glossary via lemma_support. Excluded: ETCSL, eBL, NC, B2c, synth, name-aux.",
+    "official_en_lemmas_before": 9670,
+    "official_plus_syn_wordnet": 21287,
+    "after_plus_mined_lemmas": 30684,
+    "vocab_size": 49004,
+    "n_used": 334966,
+    "n_seen": 400253,
+    "excluded": {
+      "empty_keys_or_words": 9809,
+      "synth": 44308,
+      "etcsl": 11170
+    },
+    "n_mined_sign_word": 368444,
+    "n_mined_sign_word_post": 366618,
+    "n_conflict_skip": 1605199,
+    "min_count": 5,
+    "min_pmi": 2.0
+  },
+  "policies": {
+    "lenient": {
+      "n_kept_arm_s": 1448,
+      "n_rejected_arm_s": 31,
+      "of_s_filter_ok": 1448,
+      "tags": {
+        "copy_through": 19,
+        "common_noun_as_pn": 11,
+        "invented": 3
+      },
+      "genre_s": {
+        "Administrative": 461,
+        "Lexical": 165,
+        "Medical": 144,
+        "Royal / official": 214,
+        "Letter": 188,
+        "Literary": 211,
+        "Prayer / incantation": 25,
+        "Legal": 24,
+        "Other": 10,
+        "(unlabeled)": 37
+      },
+      "genre_k": {
+        "Administrative": 451,
+        "Lexical": 151,
+        "Medical": 144,
+        "Royal / official": 212,
+        "Letter": 187,
+        "Literary": 207,
+        "Prayer / incantation": 25,
+        "Legal": 24,
+        "Other": 10,
+        "(unlabeled)": 37
+      },
+      "period_s": {
+        "Old Babylonian": 791,
+        "Neo-Babylonian": 36,
+        "Neo-Assyrian": 236,
+        "Old Akkadian": 37,
+        "Ur III": 184,
+        "unknown": 51,
+        "Old Assyrian": 40,
+        "Achaemenid": 10,
+        "ED IIIb": 8,
+        "Early Old Babylonian": 27,
+        "Middle Babylonian": 29,
+        "Lagash II": 16,
+        "Middle Assyrian": 13,
+        "ED I-II": 1
+      },
+      "period_k": {
+        "Old Babylonian": 772,
+        "Neo-Babylonian": 35,
+        "Neo-Assyrian": 232,
+        "Old Akkadian": 36,
+        "Ur III": 180,
+        "unknown": 51,
+        "Old Assyrian": 39,
+        "Achaemenid": 9,
+        "ED IIIb": 8,
+        "Early Old Babylonian": 27,
+        "Middle Babylonian": 29,
+        "Lagash II": 16,
+        "Middle Assyrian": 13,
+        "ED I-II": 1
+      },
+      "admin_s": 461,
+      "admin_k": 451,
+      "n_improve": 4925,
+      "n_improve_ok": 3279,
+      "improve_fail": {
+        "copy_through": 66,
+        "invented": 417,
+        "lemma_missing": 925,
+        "names": 233,
+        "numbers": 222,
+        "common_noun_as_pn": 57,
+        "units": 10,
+        "omen_template": 2,
+        "doubled_gloss": 13,
+        "langtag": 1,
+        "titulary": 6,
+        "idiom": 1
+      }
+    },
+    "strict_per_sign": {
+      "n_kept_arm_s": 1302,
+      "n_rejected_arm_s": 177,
+      "of_s_filter_ok": 1302,
+      "tags": {
+        "gloss_unlicensed": 146,
+        "copy_through": 19,
+        "common_noun_as_pn": 11,
+        "invented": 3
+      },
+      "genre_s": {
+        "Administrative": 461,
+        "Lexical": 165,
+        "Medical": 144,
+        "Royal / official": 214,
+        "Letter": 188,
+        "Literary": 211,
+        "Prayer / incantation": 25,
+        "Legal": 24,
+        "Other": 10,
+        "(unlabeled)": 37
+      },
+      "genre_k": {
+        "Administrative": 425,
+        "Lexical": 130,
+        "Medical": 133,
+        "Royal / official": 186,
+        "Letter": 157,
+        "Literary": 192,
+        "Prayer / incantation": 20,
+        "Legal": 21,
+        "Other": 9,
+        "(unlabeled)": 29
+      },
+      "period_s": {
+        "Old Babylonian": 791,
+        "Neo-Babylonian": 36,
+        "Neo-Assyrian": 236,
+        "Old Akkadian": 37,
+        "Ur III": 184,
+        "unknown": 51,
+        "Old Assyrian": 40,
+        "Achaemenid": 10,
+        "ED IIIb": 8,
+        "Early Old Babylonian": 27,
+        "Middle Babylonian": 29,
+        "Lagash II": 16,
+        "Middle Assyrian": 13,
+        "ED I-II": 1
+      },
+      "period_k": {
+        "Old Babylonian": 695,
+        "Neo-Babylonian": 34,
+        "Neo-Assyrian": 216,
+        "Old Akkadian": 32,
+        "Ur III": 163,
+        "unknown": 42,
+        "Old Assyrian": 30,
+        "Achaemenid": 7,
+        "ED IIIb": 8,
+        "Early Old Babylonian": 24,
+        "Middle Babylonian": 26,
+        "Lagash II": 15,
+        "Middle Assyrian": 10
+      },
+      "admin_s": 461,
+      "admin_k": 425,
+      "n_improve": 4925,
+      "n_improve_ok": 3012,
+      "improve_fail": {
+        "gloss_unlicensed": 267,
+        "copy_through": 66,
+        "invented": 417,
+        "lemma_missing": 925,
+        "names": 233,
+        "numbers": 222,
+        "common_noun_as_pn": 57,
+        "units": 10,
+        "omen_template": 2,
+        "doubled_gloss": 13,
+        "langtag": 1,
+        "titulary": 6,
+        "idiom": 1
+      }
+    },
+    "strict_per_sign_min3": {
+      "n_kept_arm_s": 1440,
+      "n_rejected_arm_s": 39,
+      "of_s_filter_ok": 1440,
+      "tags": {
+        "copy_through": 19,
+        "gloss_unlicensed": 8,
+        "common_noun_as_pn": 11,
+        "invented": 3
+      },
+      "genre_s": {
+        "Administrative": 461,
+        "Lexical": 165,
+        "Medical": 144,
+        "Royal / official": 214,
+        "Letter": 188,
+        "Literary": 211,
+        "Prayer / incantation": 25,
+        "Legal": 24,
+        "Other": 10,
+        "(unlabeled)": 37
+      },
+      "genre_k": {
+        "Administrative": 448,
+        "Lexical": 150,
+        "Medical": 143,
+        "Royal / official": 211,
+        "Letter": 187,
+        "Literary": 206,
+        "Prayer / incantation": 25,
+        "Legal": 24,
+        "Other": 10,
+        "(unlabeled)": 36
+      },
+      "period_s": {
+        "Old Babylonian": 791,
+        "Neo-Babylonian": 36,
+        "Neo-Assyrian": 236,
+        "Old Akkadian": 37,
+        "Ur III": 184,
+        "unknown": 51,
+        "Old Assyrian": 40,
+        "Achaemenid": 10,
+        "ED IIIb": 8,
+        "Early Old Babylonian": 27,
+        "Middle Babylonian": 29,
+        "Lagash II": 16,
+        "Middle Assyrian": 13,
+        "ED I-II": 1
+      },
+      "period_k": {
+        "Old Babylonian": 768,
+        "Neo-Babylonian": 35,
+        "Neo-Assyrian": 231,
+        "Old Akkadian": 36,
+        "Ur III": 179,
+        "unknown": 51,
+        "Old Assyrian": 39,
+        "Achaemenid": 9,
+        "ED IIIb": 8,
+        "Early Old Babylonian": 26,
+        "Middle Babylonian": 28,
+        "Lagash II": 16,
+        "Middle Assyrian": 13,
+        "ED I-II": 1
+      },
+      "admin_s": 461,
+      "admin_k": 448,
+      "n_improve": 4925,
+      "n_improve_ok": 3260,
+      "improve_fail": {
+        "copy_through": 66,
+        "invented": 417,
+        "lemma_missing": 925,
+        "names": 233,
+        "numbers": 222,
+        "common_noun_as_pn": 57,
+        "units": 10,
+        "gloss_unlicensed": 19,
+        "omen_template": 2,
+        "doubled_gloss": 13,
+        "langtag": 1,
+        "titulary": 6,
+        "idiom": 1
+      }
+    },
+    "strict_corpus": {
+      "n_kept_arm_s": 1440,
+      "n_rejected_arm_s": 39,
+      "of_s_filter_ok": 1440,
+      "tags": {
+        "copy_through": 19,
+        "common_noun_as_pn": 11,
+        "gloss_unlicensed": 8,
+        "invented": 3
+      },
+      "genre_s": {
+        "Administrative": 461,
+        "Lexical": 165,
+        "Medical": 144,
+        "Royal / official": 214,
+        "Letter": 188,
+        "Literary": 211,
+        "Prayer / incantation": 25,
+        "Legal": 24,
+        "Other": 10,
+        "(unlabeled)": 37
+      },
+      "genre_k": {
+        "Administrative": 450,
+        "Lexical": 150,
+        "Medical": 144,
+        "Royal / official": 209,
+        "Letter": 186,
+        "Literary": 207,
+        "Prayer / incantation": 25,
+        "Legal": 24,
+        "Other": 8,
+        "(unlabeled)": 37
+      },
+      "period_s": {
+        "Old Babylonian": 791,
+        "Neo-Babylonian": 36,
+        "Neo-Assyrian": 236,
+        "Old Akkadian": 37,
+        "Ur III": 184,
+        "unknown": 51,
+        "Old Assyrian": 40,
+        "Achaemenid": 10,
+        "ED IIIb": 8,
+        "Early Old Babylonian": 27,
+        "Middle Babylonian": 29,
+        "Lagash II": 16,
+        "Middle Assyrian": 13,
+        "ED I-II": 1
+      },
+      "period_k": {
+        "Old Babylonian": 768,
+        "Neo-Babylonian": 35,
+        "Neo-Assyrian": 230,
+        "Old Akkadian": 36,
+        "Ur III": 180,
+        "unknown": 51,
+        "Old Assyrian": 39,
+        "Achaemenid": 7,
+        "ED IIIb": 8,
+        "Early Old Babylonian": 27,
+        "Middle Babylonian": 29,
+        "Lagash II": 16,
+        "Middle Assyrian": 13,
+        "ED I-II": 1
+      },
+      "admin_s": 461,
+      "admin_k": 450,
+      "n_improve": 4925,
+      "n_improve_ok": 3258,
+      "improve_fail": {
+        "copy_through": 66,
+        "invented": 417,
+        "lemma_missing": 925,
+        "names": 233,
+        "numbers": 222,
+        "common_noun_as_pn": 57,
+        "units": 10,
+        "gloss_unlicensed": 21,
+        "omen_template": 2,
+        "doubled_gloss": 13,
+        "langtag": 1,
+        "titulary": 6,
+        "idiom": 1
+      }
+    },
+    "strict_reverse": {
+      "n_kept_arm_s": 1238,
+      "n_rejected_arm_s": 241,
+      "of_s_filter_ok": 1238,
+      "tags": {
+        "gloss_unlicensed": 210,
+        "copy_through": 19,
+        "common_noun_as_pn": 11,
+        "invented": 3
+      },
+      "genre_s": {
+        "Administrative": 461,
+        "Lexical": 165,
+        "Medical": 144,
+        "Royal / official": 214,
+        "Letter": 188,
+        "Literary": 211,
+        "Prayer / incantation": 25,
+        "Legal": 24,
+        "Other": 10,
+        "(unlabeled)": 37
+      },
+      "genre_k": {
+        "Administrative": 409,
+        "Lexical": 132,
+        "Medical": 119,
+        "Royal / official": 181,
+        "Letter": 148,
+        "Prayer / incantation": 18,
+        "Literary": 175,
+        "Legal": 18,
+        "Other": 9,
+        "(unlabeled)": 29
+      },
+      "period_s": {
+        "Old Babylonian": 791,
+        "Neo-Babylonian": 36,
+        "Neo-Assyrian": 236,
+        "Old Akkadian": 37,
+        "Ur III": 184,
+        "unknown": 51,
+        "Old Assyrian": 40,
+        "Achaemenid": 10,
+        "ED IIIb": 8,
+        "Early Old Babylonian": 27,
+        "Middle Babylonian": 29,
+        "Lagash II": 16,
+        "Middle Assyrian": 13,
+        "ED I-II": 1
+      },
+      "period_k": {
+        "Old Babylonian": 661,
+        "Neo-Babylonian": 32,
+        "Neo-Assyrian": 200,
+        "Old Akkadian": 32,
+        "Ur III": 155,
+        "unknown": 37,
+        "Old Assyrian": 30,
+        "Achaemenid": 9,
+        "ED IIIb": 8,
+        "Early Old Babylonian": 24,
+        "Middle Babylonian": 25,
+        "Lagash II": 15,
+        "Middle Assyrian": 10
+      },
+      "admin_s": 461,
+      "admin_k": 409,
+      "n_improve": 4925,
+      "n_improve_ok": 2802,
+      "improve_fail": {
+        "copy_through": 66,
+        "invented": 417,
+        "lemma_missing": 925,
+        "gloss_unlicensed": 477,
+        "names": 233,
+        "numbers": 222,
+        "common_noun_as_pn": 57,
+        "units": 10,
+        "omen_template": 2,
+        "doubled_gloss": 13,
+        "langtag": 1,
+        "titulary": 6,
+        "idiom": 1
+      }
+    }
+  },
+  "policy_keep_ids_counts": {
+    "lenient": 1448,
+    "strict_per_sign": 1302,
+    "strict_per_sign_min3": 1440,
+    "strict_corpus": 1440,
+    "strict_reverse": 1238
+  },
+  "samples": {
+    "strict_per_sign": [
+      {
+        "id": "P270691:9",
+        "genre": "Legal",
+        "period": "Old Babylonian",
+        "bucket": "Legal",
+        "atf": "_a2 mu-a-sze3_",
+        "english": "for the labor of that year",
+        "fails": [],
+        "fwd_unlic": [
+          "labor"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [
+          "labor: expected a-il2|ail2|bir3|a2-il2|a2il2|eren2"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P247855:307",
+        "genre": "Lexical",
+        "period": "Old Babylonian",
+        "bucket": "Lexical",
+        "atf": "{u2}|ZI&ZI.LAGAB|",
+        "english": "a type of grass",
+        "fails": [],
+        "fwd_unlic": [
+          "type"
+        ],
+        "fwd_ratio": 0.5,
+        "fwd_n": 2,
+        "rev_unlic": [
+          "type: expected ze2|dī|gl|lh|nr|t,r"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P333149:130",
+        "genre": "Lexical",
+        "period": "Old Babylonian",
+        "bucket": "Lexical",
+        "atf": "gag <([KAK])> ka-ku",
+        "english": "gag (is a synonym of): weapon.",
+        "fails": [],
+        "fwd_unlic": [
+          "synonym"
+        ],
+        "fwd_ratio": 0.5,
+        "fwd_n": 2,
+        "rev_unlic": [
+          "synonym: expected ba-a-ru3|baaru3|li-sza2-ni|lisza2ni|kit-tab-ri-szu2|kittabriszu2"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P270782:5",
+        "genre": "Administrative",
+        "period": "Old Babylonian",
+        "bucket": "Administrative",
+        "atf": "[...] _sze nig2-ar3-ra_",
+        "english": "... barley of the niŋaru-allocation",
+        "fails": [],
+        "fwd_unlic": [
+          "aru-allocation"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [
+          "aru-allocation: expected asza3|irisi2|irisi2ia|irisi2iu|irisi2ium|irisi2iani"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P393923:414",
+        "genre": "Official or display",
+        "period": "Middle Assyrian",
+        "bucket": "Royal / official",
+        "atf": "u3 ka-mu-szu-nu i-na ma-har {d}utu _en_-ia",
+        "english": "and their offerings before Šamaš, my lord,",
+        "fails": [],
+        "fwd_unlic": [
+          "offerings"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [
+          "offerings: expected e11|a-qi2|aqi2|ki-sig3|kisig3|sa-dug4"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P263166:79",
+        "genre": "Official or display",
+        "period": "Early Old Babylonian",
+        "bucket": "Royal / official",
+        "atf": "nig2#-[mu10]-us2#-sa2",
+        "english": "as a marriage gift",
+        "fails": [],
+        "fwd_unlic": [
+          "marriage"
+        ],
+        "fwd_ratio": 0.5,
+        "fwd_n": 2,
+        "rev_unlic": [
+          "marriage: expected aj2-dam|aj2dam|e-mu-tu2|emutu2|dam-u2-ti|dam-u2-tu"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P248028:15",
+        "genre": "Letter",
+        "period": "Old Babylonian",
+        "bucket": "Letter",
+        "atf": "_4(bur3) 2(esze3) GAN2_ u2-sze-lu-u2",
+        "english": "They will clear 4 bur3 2 eše3 of field.",
+        "fails": [],
+        "fwd_unlic": [
+          "clear"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [
+          "clear: expected du8|dan3|dan4|dan6|sug4|du8-ma"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P358363:18",
+        "genre": "Letter",
+        "period": "Old Assyrian",
+        "bucket": "Letter",
+        "atf": "[... _ku3]-babbar_ i-sze2-ep",
+        "english": "... he will pay the silver.",
+        "fails": [],
+        "fwd_unlic": [
+          "pay"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [
+          "pay: expected e3-a|e3a|e-la2|ela2|i3-e3|i3e3"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P270790:7",
+        "genre": "Administrative",
+        "period": "Old Babylonian",
+        "bucket": "Administrative",
+        "atf": "_2(u) 2(disz) szu ti-a 2(disz) {lu2}azlag2_",
+        "english": "22 received, 2 fullers;",
+        "fails": [],
+        "fwd_unlic": [
+          "received"
+        ],
+        "fwd_ratio": 0.5,
+        "fwd_n": 2,
+        "rev_unlic": [
+          "received: expected ti-u2|tiu2|li-qe2|liqe2|be|ur",
+          "fullers: expected sa5|su3|de6-a|de6a|sug4|nij2-bar-sur-ra"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P481834:29",
+        "genre": "Letter",
+        "period": "Old Babylonian",
+        "bucket": "Letter",
+        "atf": "a-na sza at,-ru-du-szu id-di-in-mas",
+        "english": "he gave it to the one who cursed him",
+        "fails": [],
+        "fwd_unlic": [
+          "cursed"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [
+          "cursed: expected asz2|asz3|as2-se|as2se|asz2-a|asz2a"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      }
+    ],
+    "strict_reverse": [
+      {
+        "id": "P452606:21",
+        "genre": "Prayer",
+        "period": "Neo-Assyrian",
+        "bucket": "Prayer / incantation",
+        "atf": "[...] az#-za-ki ki-ma la#-[ar2-di]",
+        "english": "[...] I stand like a [...]",
+        "fails": [],
+        "fwd_unlic": [
+          "stand"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [
+          "stand: expected su8|dur2|i3-du|i3du|su8-a|su8a"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P270706:12",
+        "genre": "Legal",
+        "period": "Old Babylonian",
+        "bucket": "Legal",
+        "atf": "u3 a2-gab2-bu-gin7",
+        "english": "and like the flank",
+        "fails": [],
+        "fwd_unlic": [
+          "flank"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [
+          "flank: expected a-hi-sza2|ahisza2|ahu|a-hi-sza|ahīsza"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P285210:33",
+        "genre": "Medical",
+        "period": "Neo-Assyrian",
+        "bucket": "Medical",
+        "atf": "u ma-gal _zi-zi-bi {uzu}bun_-szu he-sa-at",
+        "english": "and his liver is greatly swollen.",
+        "fails": [],
+        "fwd_unlic": [],
+        "fwd_ratio": 0.0,
+        "fwd_n": 3,
+        "rev_unlic": [
+          "liver: expected u5|ba3|ur5|bur3|dun3|gir2",
+          "swollen: expected bir7|eb-t,u2|ebt,u2|e-be2-t,u|e-eb-t,u2|ul"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P240428:10",
+        "genre": "Literary",
+        "period": "Neo-Assyrian",
+        "bucket": "Literary",
+        "atf": "[...] ina eri-du10 ri-im-ma-[tu2 ...]",
+        "english": "... in Eridu, the rejoicing ...",
+        "fails": [],
+        "fwd_unlic": [],
+        "fwd_ratio": 0.0,
+        "fwd_n": 1,
+        "rev_unlic": [
+          "rejoicing: expected hul2|sug4|he2-li|he2li|hul2-a|hul2-e"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P297240:9",
+        "genre": "Letter",
+        "period": "Old Assyrian",
+        "bucket": "Letter",
+        "atf": "a-szar i-ta-pu-lu-ni",
+        "english": "where they appealed to me,",
+        "fails": [],
+        "fwd_unlic": [
+          "appealed"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [
+          "appealed: expected hilib2|hi-li|hili|in-bu|inbu|a-ra-zu"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P393923:414",
+        "genre": "Official or display",
+        "period": "Middle Assyrian",
+        "bucket": "Royal / official",
+        "atf": "u3 ka-mu-szu-nu i-na ma-har {d}utu _en_-ia",
+        "english": "and their offerings before Šamaš, my lord,",
+        "fails": [],
+        "fwd_unlic": [
+          "offerings"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [
+          "offerings: expected e11|a-qi2|aqi2|ki-sig3|kisig3|sa-dug4"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "Q003344:1",
+        "genre": "Royal Inscription",
+        "period": "Neo-Assyrian",
+        "bucket": "Royal / official",
+        "atf": "Horned headdress on podium bearing a relief of a stylized tree",
+        "english": "Horned headdress on a pedestal bearing a relief of a stylized tree.",
+        "fails": [],
+        "fwd_unlic": [
+          "pedestal"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [
+          "pedestal: expected szu-pa2-al|szupa2al|ki-gal-ju10|ki-gal-sze3|kigalju10|kigalsze3"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P252335:5",
+        "genre": "Literary",
+        "period": "Old Babylonian",
+        "bucket": "Literary",
+        "atf": "{jesz}bansur# ku3 {d}en-lil2-la2-ka muszen (IGI.DU-)x#",
+        "english": "The bird (looks at) the pure table of Enlil.",
+        "fails": [],
+        "fwd_unlic": [
+          "looks"
+        ],
+        "fwd_ratio": 0.25,
+        "fwd_n": 4,
+        "rev_unlic": [
+          "looks: expected bu-u2|buu2|a-lu-u2|a-nu-u2|aluu2|anuu2"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P285124:7",
+        "genre": "Medical",
+        "period": "unknown",
+        "bucket": "Medical",
+        "atf": "ina _mud2 erin_ lu ina _i3 erin# hi-hi za-na du3_-usz",
+        "english": "You make a preparation with either cedar resin or cedar oil.",
+        "fails": [],
+        "fwd_unlic": [
+          "preparation"
+        ],
+        "fwd_ratio": 0.2,
+        "fwd_n": 5,
+        "rev_unlic": [
+          "preparation: expected dida2|kasz-u2-sa|kaszu2sa|te9-er-si2-ti|te9ersi2ti|sza2-as,-bu-tu2"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P520812:2",
+        "genre": "Letter",
+        "period": "unknown",
+        "bucket": "Letter",
+        "atf": "'m#n szlm",
+        "english": "ʿAmmi, it is well.",
+        "fails": [],
+        "fwd_unlic": [
+          "ammi"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [
+          "ammi: expected ir3-ra-i-x|ir3raix|am-mi-s,a-du-qa2|ammis,aduqa2|bi-x|bi-x-x"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      }
+    ],
+    "strict_corpus": [
+      {
+        "id": "P346075:127",
+        "genre": "Lexical",
+        "period": "Neo-Assyrian",
+        "bucket": "Lexical",
+        "atf": "[...] [x a]-me-lu-ti",
+        "english": "[…] human beings",
+        "fails": [],
+        "fwd_unlic": [
+          "beings"
+        ],
+        "fwd_ratio": 0.5,
+        "fwd_n": 2,
+        "rev_unlic": [],
+        "rev_unmapped": [
+          "beings"
+        ],
+        "corp_unlic": [
+          "beings"
+        ]
+      },
+      {
+        "id": "P426228:18",
+        "genre": "Royal Inscription",
+        "period": "Neo-Assyrian",
+        "bucket": "Royal / official",
+        "atf": "ta-as-bu-su tal-li-ku#",
+        "english": "you became angry, you went.",
+        "fails": [],
+        "fwd_unlic": [
+          "became"
+        ],
+        "fwd_ratio": 0.5,
+        "fwd_n": 2,
+        "rev_unlic": [],
+        "rev_unmapped": [
+          "became"
+        ],
+        "corp_unlic": [
+          "became"
+        ]
+      },
+      {
+        "id": "P254555:4",
+        "genre": "Mathematical",
+        "period": "Old Babylonian",
+        "bucket": "Other",
+        "atf": "a-ra2 4(disz) & 3(gesz'u)",
+        "english": "4 times 1800",
+        "fails": [],
+        "fwd_unlic": [],
+        "fwd_ratio": 0.0,
+        "fwd_n": 1,
+        "rev_unlic": [],
+        "rev_unmapped": [
+          "times"
+        ],
+        "corp_unlic": [
+          "times"
+        ]
+      },
+      {
+        "id": "P372878:19",
+        "genre": "Letter",
+        "period": "Old Babylonian",
+        "bucket": "Letter",
+        "atf": "{disz}{d}a-a-ti-la-ti",
+        "english": "Ayatilāti,",
+        "fails": [],
+        "fwd_unlic": [
+          "ayatil"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [],
+        "rev_unmapped": [
+          "ayatil"
+        ],
+        "corp_unlic": [
+          "ayatil"
+        ]
+      },
+      {
+        "id": "P254555:11",
+        "genre": "Mathematical",
+        "period": "Old Babylonian",
+        "bucket": "Other",
+        "atf": "a-ra2 1(u) 1(disz) & 1(szar2) 2(gesz'u) 6(gesz2)! 3(u)",
+        "english": "11 times 1 šar2 2 gesz'u 6 gesz2 30",
+        "fails": [],
+        "fwd_unlic": [],
+        "fwd_ratio": 0.0,
+        "fwd_n": 1,
+        "rev_unlic": [],
+        "rev_unmapped": [
+          "times"
+        ],
+        "corp_unlic": [
+          "times"
+        ]
+      },
+      {
+        "id": "Q007146:20",
+        "genre": "Royal Inscription",
+        "period": "Achaemenid",
+        "bucket": "Royal / official",
+        "atf": "p-u-ç h-x-a-m-n-i-sz#-i-y",
+        "english": "son of Haxāmanišiya",
+        "fails": [],
+        "fwd_unlic": [
+          "hax"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [],
+        "rev_unmapped": [
+          "hax"
+        ],
+        "corp_unlic": [
+          "hax"
+        ]
+      },
+      {
+        "id": "Q007260:16",
+        "genre": "Royal Inscription",
+        "period": "Achaemenid",
+        "bucket": "Royal / official",
+        "atf": "XSZ-h-y-a p-u-ç h-x-a-m-n-i-sz-i-;",
+        "english": "[...] king, son of Haxāmanišiya",
+        "fails": [],
+        "fwd_unlic": [
+          "hax"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [],
+        "rev_unmapped": [
+          "hax"
+        ],
+        "corp_unlic": [
+          "hax"
+        ]
+      },
+      {
+        "id": "P270791:17",
+        "genre": "Administrative",
+        "period": "Old Babylonian",
+        "bucket": "Administrative",
+        "atf": "_iti bara2-[za3-gar] u4# 1(u) 2(disz)-kam_",
+        "english": "The month of Baragzagŋar, the 12th day",
+        "fails": [],
+        "fwd_unlic": [
+          "baragzag"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 1,
+        "rev_unlic": [],
+        "rev_unmapped": [
+          "baragzag"
+        ],
+        "corp_unlic": [
+          "baragzag"
+        ]
+      }
+    ],
+    "strict_per_sign_min3": [
+      {
+        "id": "P270665:2",
+        "genre": "Administrative",
+        "period": "Old Babylonian",
+        "bucket": "Administrative",
+        "atf": "1(u) 2/3(disz) sila3 {gesz}ban2 1(u) sila3 1(u) 2/3(disz) sila3 {gesz}ban2 1(u) sila3",
+        "english": "10 2/3 sila3 of {gesz}ban2, 10 sila3; 10 2/3 sila3 of {gesz}ban2, 10 sila3",
+        "fails": [],
+        "fwd_unlic": [
+          "gesz",
+          "gesz"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 2,
+        "rev_unlic": [
+          "gesz: expected bur2|geszbur2|ba|sze|gesz",
+          "gesz: expected bur2|geszbur2|ba|sze|gesz"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P480694:40",
+        "genre": "Official or display",
+        "period": "Early Old Babylonian",
+        "bucket": "Royal / official",
+        "atf": "i-nu-u2-ma ir-ta-bu-u2 be-el-szu i-ma-ar-szu",
+        "english": "When he has grown old, his lord will see him.",
+        "fails": [],
+        "fwd_unlic": [
+          "grown",
+          "old"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 2,
+        "rev_unlic": [
+          "grown: expected ma4|mu2|ul7|mu2-a|mu2-e|mu2a",
+          "old: expected mu-1|mu-2|mu-3|mu-4|mu-5|mu-6"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P270808:27",
+        "genre": "",
+        "period": "Old Babylonian",
+        "bucket": "(unlabeled)",
+        "atf": "_2(asz) gur {gesz}haszhur_ szu-uk-ra sza a-wi-lim",
+        "english": "2 gur of fresh apple-wood, belonging to Awilim;",
+        "fails": [],
+        "fwd_unlic": [
+          "fresh",
+          "belonging"
+        ],
+        "fwd_ratio": 0.6667,
+        "fwd_n": 3,
+        "rev_unlic": [
+          "fresh: expected bil2|duru5|bil2-ga|bil2ga|bil3-ga|bil3ga"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P305827:12",
+        "genre": "Literary",
+        "period": "Old Babylonian",
+        "bucket": "Literary",
+        "atf": "u2#-usz#-szu-pi-en-nam szi-usz! tu-ni-ik#-[ki]",
+        "english": "I have made you bow down; you have made me bow down.",
+        "fails": [],
+        "fwd_unlic": [
+          "bow",
+          "bow"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 2,
+        "rev_unlic": [
+          "bow: expected e2-ban|e2ban|sag-e3|sage3|ru|sa",
+          "bow: expected e2-ban|e2ban|sag-e3|sage3|ru|sa"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P204308:10",
+        "genre": "Administrative",
+        "period": "Ur III",
+        "bucket": "Administrative",
+        "atf": "igi 3(disz) gal2 2(disz) 1/2(disz) sze ku3",
+        "english": "3 available, 2 1/2 shekels of silver;",
+        "fails": [],
+        "fwd_unlic": [
+          "available",
+          "shekels"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 2,
+        "rev_unlic": [
+          "available: expected u2-ma-s,i|u2mas,i|mu-s,u2-u2|mus,u2u2|qe2-ru-ub|qe2ruub",
+          "shekels: expected dun3|gij4|gin2|gin2-a|gin2-e|gin2a"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P270665:9",
+        "genre": "Administrative",
+        "period": "Old Babylonian",
+        "bucket": "Administrative",
+        "atf": "6(asz) 3(barig) 3(ban2) & 3(asz) 4(barig) 2(ban2) & & & 8(asz) 2(barig) 5(ban2) iri ta-ri-ba-tu4{ki}",
+        "english": "6 gur 3 barig 3 ban2, 3 gur 4 barig 2 ban2, 8 gur 2 barig 5 ban2, city of Taribatu",
+        "fails": [],
+        "fwd_unlic": [
+          "gur",
+          "gur",
+          "gur"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 3,
+        "rev_unlic": [
+          "gur: expected mu5|1asz|gur2|gur3|gur4|gur6",
+          "gur: expected mu5|1asz|gur2|gur3|gur4|gur6",
+          "gur: expected mu5|1asz|gur2|gur3|gur4|gur6"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P285198:25",
+        "genre": "Medical",
+        "period": "Neo-Assyrian",
+        "bucket": "Medical",
+        "atf": "_DISZ na dur2-gig gig mud2_ i-te-ez-zi qe2-reb _dur2_-szu2 u2-ha-asz2 ana _[ti_-szu2]",
+        "english": "If a man is sick with dur-gig disease, blood comes out from the interior of his anus; for his recovery.",
+        "fails": [],
+        "fwd_unlic": [
+          "disease",
+          "recovery"
+        ],
+        "fwd_ratio": 0.3333,
+        "fwd_n": 6,
+        "rev_unlic": [
+          "disease: expected a-ri6|ari2|ari6|dih2|du2-a|du2a",
+          "recovery: expected an-ti|anti|balāt,i|balat,u"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      },
+      {
+        "id": "P332932:19",
+        "genre": "Lexical",
+        "period": "Middle Babylonian",
+        "bucket": "Lexical",
+        "atf": "maszkim-e-ne-ne [...]",
+        "english": "The responsible officials ...",
+        "fails": [],
+        "fwd_unlic": [
+          "responsible",
+          "officials"
+        ],
+        "fwd_ratio": 1.0,
+        "fwd_n": 2,
+        "rev_unlic": [
+          "responsible: expected na-szu2-u2|naszu2u2|bēl|be-el|beel|bēlī",
+          "officials: expected kusz7|lu2-ad|lu2ad|pa-lu2|palu2|susz3"
+        ],
+        "rev_unmapped": [],
+        "corp_unlic": []
+      }
+    ]
+  },
+  "sample_sizes": {
+    "strict_per_sign_n": 146,
+    "strict_reverse_n": 210,
+    "strict_corpus_n": 8,
+    "strict_per_sign_min3_n": 8
+  },
+  "panel": [
+    {
+      "id": "fair:0591",
+      "cat": "c",
+      "note": "**c** wrong body part (ATF is *šaptīšu* \"his lip\")",
+      "slice": "medical, MB",
+      "atf": "DISZ# sz[a]p-ti-szu a-na e-le-nu u2-ha-an-na-as, BA.USZ2",
+      "ref": "If he pulls his lip upward: He will die.",
+      "genre": "CANONICAL > Technical > Medicine > Diagnostic and Prognostic",
+      "ctrl": "If his s[p]eech continually aches upwards: he will die.",
+      "hard_ok": false,
+      "fails": [
+        "invented:speech,continually,aches",
+        "lemma_missing:lip"
+      ],
+      "fwd": {
+        "n_content": 5,
+        "n_unlicensed": 3,
+        "unlicensed": [
+          "speech",
+          "continually",
+          "aches"
+        ],
+        "ratio": 0.6,
+        "score": 0.6,
+        "allowed_n": 4595,
+        "tier": "per_sign"
+      },
+      "fwd_over": true,
+      "fwd_min3": true,
+      "corpus": {
+        "n_content": 5,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 5,
+        "n_unlicensed": 3,
+        "unlicensed": [
+          "speech: expected du11|ka-u2|kau2|pu-u2|puu2|at-me2-e",
+          "continually: expected mu2|mu2-mu2|mu2mu2|e-tam2-da|etam2da|gu3-gu3-a",
+          "aches: expected adu|buul|szin|ulti|maadu|puran"
+        ],
+        "unlicensed_words": [
+          "speech",
+          "continually",
+          "aches"
+        ],
+        "expected": {
+          "speech": [
+            "du11",
+            "ka-u2",
+            "kau2",
+            "pu-u2",
+            "puu2",
+            "at-me2-e"
+          ],
+          "continual": [
+            "mu2",
+            "mu2-mu2",
+            "mu2mu2",
+            "e-tam2-da",
+            "etam2da",
+            "gu3-gu3-a"
+          ],
+          "ache": [
+            "adu",
+            "buul",
+            "szin",
+            "ulti",
+            "maadu",
+            "puran"
+          ]
+        },
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.6,
+        "score": 0.6,
+        "tier": "reverse"
+      },
+      "reverse_over": true
+    },
+    {
+      "id": "fair:0883",
+      "cat": "c",
+      "note": "**c** mix vs smash/break; unit wording is also (a)",
+      "slice": "medical, OB",
+      "atf": "i-na 1(disz) _sila3_ ru-usz-tim# [x x x ta]-ha-aq-ma?",
+      "ref": "you mix it in one liter of fine-quality oil,",
+      "genre": "Medical",
+      "ctrl": "From one old sila3 ... you will break and",
+      "hard_ok": true,
+      "fails": [],
+      "fwd": {
+        "n_content": 2,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "old"
+        ],
+        "ratio": 0.5,
+        "score": 0.5,
+        "allowed_n": 3296,
+        "tier": "per_sign"
+      },
+      "fwd_over": true,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 2,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 2,
+        "n_unlicensed": 2,
+        "unlicensed": [
+          "old: expected mu-1|mu-2|mu-3|mu-4|mu-5|mu-6",
+          "break: expected zi2|bur3|gir8|gud9|dar|dur"
+        ],
+        "unlicensed_words": [
+          "old",
+          "break"
+        ],
+        "expected": {
+          "old": [
+            "mu-1",
+            "mu-2",
+            "mu-3",
+            "mu-4",
+            "mu-5",
+            "mu-6"
+          ],
+          "break": [
+            "zi2",
+            "bur3",
+            "gir8",
+            "gud9",
+            "dar",
+            "dur"
+          ]
+        },
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 1.0,
+        "score": 1.0,
+        "tier": "reverse"
+      },
+      "reverse_over": true
+    },
+    {
+      "id": "fair:0657",
+      "cat": "d",
+      "note": "**d** ref is much longer than this ATF line; hyps only see *-enden* \"we will\"",
+      "slice": "OB literary",
+      "atf": "%sux [...] x-x-ge-en-de3-en e-sze",
+      "ref": "[…] … its feet are fifty […] … the street […] … it is said/they say",
+      "genre": "CANONICAL > Literature > Monologue and dialogue > Proverbs",
+      "ctrl": "We will ...",
+      "hard_ok": false,
+      "fails": [
+        "lemma_missing:house"
+      ],
+      "fwd": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 1386,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0864",
+      "cat": "d",
+      "note": "**d** ref is a full narrative sentence; ATF is one verb",
+      "slice": "OB literary",
+      "atf": "[...] mu#-da-an-ag2",
+      "ref": "He ordered shepherd Ur-Namma, whose head was raised in the Ekur temple",
+      "genre": "Literary",
+      "ctrl": "I want to say ...",
+      "hard_ok": false,
+      "fails": [
+        "lemma_missing:measure"
+      ],
+      "fwd": {
+        "n_content": 1,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "want"
+        ],
+        "ratio": 1.0,
+        "score": 1.0,
+        "allowed_n": 2597,
+        "tier": "per_sign"
+      },
+      "fwd_over": true,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 1,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "want: expected ma-ku-u2|makuu2|u2-tar-ri-szu-nu|u2tarriszunu|makû|maku"
+        ],
+        "unlicensed_words": [
+          "want"
+        ],
+        "expected": {
+          "want": [
+            "ma-ku-u2",
+            "makuu2",
+            "u2-tar-ri-szu-nu",
+            "u2tarriszunu",
+            "makû",
+            "maku"
+          ]
+        },
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 1.0,
+        "score": 1.0,
+        "tier": "reverse"
+      },
+      "reverse_over": true
+    },
+    {
+      "id": "fair:0850",
+      "cat": "c",
+      "note": "**c** ctrl left the ATF stem untranslated; ref also has an interpretive gloss",
+      "slice": "OB literary",
+      "atf": "[...]-an-gurum2",
+      "ref": "... bent over (i.e., died?)",
+      "genre": "Literary",
+      "ctrl": "-angurum",
+      "hard_ok": false,
+      "fails": [
+        "copy_through:-angurum"
+      ],
+      "fwd": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 815,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0673",
+      "cat": "a",
+      "note": "**a** invented \"May\" and odd damage brackets; lord/king is (b)",
+      "slice": "OB literary",
+      "atf": "%sux [... l]ugal a-a {d}+e[n-lil2 ...]",
+      "ref": "... king, father Enlil ...",
+      "genre": "CANONICAL > Literature > Hymns > Divine",
+      "ctrl": "… [May ...], the lord, father Enlil, [. .]",
+      "hard_ok": true,
+      "fails": [],
+      "fwd": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 2152,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0812",
+      "cat": "a",
+      "note": "**a** comma and dropped \"the\"; S matches v4e",
+      "slice": "OB literary",
+      "atf": "[{d}]en#-lil2-ra x x iri#? AN da [...]",
+      "ref": "For Enlil ...",
+      "genre": "Literary",
+      "ctrl": "For Enlil, ... city ...",
+      "hard_ok": true,
+      "fails": [],
+      "fwd": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 2965,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0823",
+      "cat": "a",
+      "note": "**a** dropped ellipses around the name",
+      "slice": "OB literary",
+      "atf": "[...] sa#-am-si#?-i-lu-na [...]",
+      "ref": "... Samsuiluna ...",
+      "genre": "Literary",
+      "ctrl": "Samsi-iluna",
+      "hard_ok": true,
+      "fails": [],
+      "fwd": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 2201,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0849",
+      "cat": "c",
+      "note": "**c** voice/agent; harbor/quay is (b)",
+      "slice": "OB literary",
+      "atf": "kar#? uru2-ga2-ka [...]-da#?-an!-gaz",
+      "ref": "In the harbor(?) of my city ... killed ...",
+      "genre": "Literary",
+      "ctrl": "The quay of my city was destroyed for him",
+      "hard_ok": true,
+      "fails": [],
+      "fwd": {
+        "n_content": 2,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "destroyed"
+        ],
+        "ratio": 0.5,
+        "score": 0.5,
+        "allowed_n": 2517,
+        "tier": "per_sign"
+      },
+      "fwd_over": true,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 2,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 2,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "destroyed: expected zah2|zer3|a-pul2|apul2|gul|iph"
+        ],
+        "unlicensed_words": [
+          "destroyed"
+        ],
+        "expected": {
+          "destroy": [
+            "zah2",
+            "zer3",
+            "a-pul2",
+            "apul2",
+            "gul",
+            "iph"
+          ]
+        },
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.5,
+        "score": 0.5,
+        "tier": "reverse"
+      },
+      "reverse_over": true
+    },
+    {
+      "id": "fair:1427",
+      "cat": "d",
+      "note": "**d** placeholder ref",
+      "slice": "royal, NA",
+      "atf": "... x-ka ... x-nu-u-si ...-pi ... ... x x",
+      "ref": "(No translation possible)",
+      "genre": "Royal Inscription",
+      "ctrl": "your ... ...",
+      "hard_ok": true,
+      "fails": [],
+      "fwd": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 2551,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:1523",
+      "cat": "d",
+      "note": "**d** placeholder ref; the name is a fair reading of the ATF",
+      "slice": "royal, MA",
+      "atf": "[({disz})sAl-ma-nu]-SAG [...] x GAR [(x)] [...] x x",
+      "ref": "No translation warranted.",
+      "genre": "Royal Inscription",
+      "ctrl": "Shalmaneser ... ...",
+      "hard_ok": true,
+      "fails": [],
+      "fwd": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 2461,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0473",
+      "cat": "c",
+      "note": "**c** common noun read as a personal name",
+      "slice": "royal, EOB",
+      "atf": "me-lu-le-tum",
+      "ref": "games",
+      "genre": "Official or display",
+      "ctrl": "Meluletum",
+      "hard_ok": false,
+      "fails": [
+        "copy_through:Meluletum",
+        "common_noun_as_pn:Meluletum"
+      ],
+      "fwd": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 1899,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0316",
+      "cat": "d",
+      "note": "**d** ref \"did\" does not match this ATF",
+      "slice": "royal, ED IIIb",
+      "atf": "x-KID ab?-munus?-x",
+      "ref": "did",
+      "genre": "Official or display",
+      "ctrl": "x-KID (is) Abmunus(?)",
+      "hard_ok": true,
+      "fails": [],
+      "fwd": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 450,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:1327",
+      "cat": "b",
+      "note": "**b** ceremonial name expanded; scorer wants the transcription",
+      "slice": "royal, NA",
+      "atf": "e2-temen-ni2-gur3-ru",
+      "ref": "the Etemenniguru",
+      "genre": "Official or display",
+      "ctrl": "the House With a Foundation Clad in Fearsomeness,",
+      "hard_ok": true,
+      "fails": [],
+      "fwd": {
+        "n_content": 3,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 1587,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 3,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 3,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0409",
+      "cat": "c",
+      "note": "**c** ctrl collapsed to an omen template; v4e also has the wrong sense",
+      "slice": "NA lexical",
+      "atf": "gu > (disz) ... GU qu-u2",
+      "ref": "thread",
+      "genre": "Lexicography",
+      "ctrl": "(If) ... .",
+      "hard_ok": false,
+      "fails": [
+        "lemma_missing:cord,flax",
+        "omen_template"
+      ],
+      "fwd": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 1572,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:1204",
+      "cat": "d",
+      "note": "**d** one ATF line scored against a whole incantation",
+      "slice": "NA",
+      "atf": "%sux [z]i an#.na he2.pad3 [x x x x x x x x x x]",
+      "ref": "Enuru-incantation: “‘The evil sinew seized that man, that man, the bound sinew seized that mouth, that mouth, (whether) it is a precious lord (or) a precious lady, the bound sinew seized that man. I have seen it, O my father, I myself have seen (what this) affliction keeps doing to each and every lord. I do not know what I should do. What will make (this affliction) turn back?’ Enki answered his son. (Praise be to) Nintinuga, ruler of the gods, Nintinuga, foremost among the gods, Nintinuga, child of Ninazu, father Enki (and) Asalluḫi. ‘O Asalluḫi, the good king, I am the one bowing (before you) so that you, Asalluḫi, may not let (this incantation) ever be dispelled from that man.’ May you be adjured by Heaven, may you be adjured by Earth.” Incantation-formula. Enuru.",
+      "genre": "",
+      "ctrl": "may he smite [......]!",
+      "hard_ok": false,
+      "fails": [
+        "lemma_missing:flour,find"
+      ],
+      "fwd": {
+        "n_content": 1,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "smite"
+        ],
+        "ratio": 1.0,
+        "score": 1.0,
+        "allowed_n": 1454,
+        "tier": "per_sign"
+      },
+      "fwd_over": true,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 1,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "smite: expected tu10|tu11|mu-e-tu10|muetu10|u2-ra-sib|u2rasib"
+        ],
+        "unlicensed_words": [
+          "smite"
+        ],
+        "expected": {
+          "smite": [
+            "tu10",
+            "tu11",
+            "mu-e-tu10",
+            "muetu10",
+            "u2-ra-sib",
+            "u2rasib"
+          ]
+        },
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 1.0,
+        "score": 1.0,
+        "tier": "reverse"
+      },
+      "reverse_over": true
+    },
+    {
+      "id": "fair:1049",
+      "cat": "c",
+      "note": "**c** added \"coarse flour\"; short ref also punishes extra words",
+      "slice": "NA lexical",
+      "atf": "im-babbar ga-as,-s,u",
+      "ref": "gypsum",
+      "genre": "Lexicography",
+      "ctrl": "gypsum, coarse flour,",
+      "hard_ok": false,
+      "fails": [
+        "invented:coarse,flour"
+      ],
+      "fwd": {
+        "n_content": 3,
+        "n_unlicensed": 2,
+        "unlicensed": [
+          "coarse",
+          "flour"
+        ],
+        "ratio": 0.6667,
+        "score": 0.6667,
+        "allowed_n": 2156,
+        "tier": "per_sign"
+      },
+      "fwd_over": true,
+      "fwd_min3": true,
+      "corpus": {
+        "n_content": 3,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 3,
+        "n_unlicensed": 2,
+        "unlicensed": [
+          "coarse: expected zi3-kum|zi3kum|zid2-gu|zid2gu|za-ri2-in|zari2in",
+          "flour: expected zi3|esz2|zi3@t|zi3t|zid2|esze2"
+        ],
+        "unlicensed_words": [
+          "coarse",
+          "flour"
+        ],
+        "expected": {
+          "coarse": [
+            "zi3-kum",
+            "zi3kum",
+            "zid2-gu",
+            "zid2gu",
+            "za-ri2-in",
+            "zari2in"
+          ],
+          "flour": [
+            "zi3",
+            "esz2",
+            "zi3@t",
+            "zi3t",
+            "zid2",
+            "esze2"
+          ]
+        },
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.6667,
+        "score": 0.6667,
+        "tier": "reverse"
+      },
+      "reverse_over": true
+    },
+    {
+      "id": "fair:1028",
+      "cat": "c",
+      "note": "**c** left NAR/EA untranslated; musician/singer is (b)",
+      "slice": "NA",
+      "atf": "(disz) du-un-ga dNAR de2-a sza lu2NAR",
+      "ref": "Dunga = Ea = he of the singer",
+      "genre": "Generic",
+      "ctrl": "Dunga, NAR (and) EA of the musician.",
+      "hard_ok": true,
+      "fails": [],
+      "fwd": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 2741,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0230",
+      "cat": "c",
+      "note": "**c** invented \"Subtotal:\", truncated name; (a) unit notation and `Ø`",
+      "slice": "Ur III admin",
+      "atf": "%sux 0.0.1 {d}nanna-kam",
+      "ref": "1 ban (10L) (for) Nanna-kam,",
+      "genre": "ARCHIVAL > Administrative > Receipts",
+      "ctrl": "Subtotal: 0;01, of Nanna.",
+      "hard_ok": false,
+      "fails": [
+        "names:Subtotal",
+        "invented:subtotal"
+      ],
+      "fwd": {
+        "n_content": 1,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "subtotal"
+        ],
+        "ratio": 1.0,
+        "score": 1.0,
+        "allowed_n": 598,
+        "tier": "per_sign"
+      },
+      "fwd_over": true,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 1,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "subtotal: expected kel3|kil3|kin4|nin3|ga-ar3|gaar3"
+        ],
+        "unlicensed_words": [
+          "subtotal"
+        ],
+        "expected": {
+          "subtotal": [
+            "kel3",
+            "kil3",
+            "kin4",
+            "nin3",
+            "ga-ar3",
+            "gaar3"
+          ]
+        },
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 1.0,
+        "score": 1.0,
+        "tier": "reverse"
+      },
+      "reverse_over": true
+    },
+    {
+      "id": "fair:0243",
+      "cat": "c",
+      "note": "**c** livestock formula hallucinated onto bread and soup",
+      "slice": "Ur III admin",
+      "atf": "%sux ½ sila3 inda3 ½ sila3 tu7",
+      "ref": "½ sila (0.5 L) of bread and ½ sila (0.5 L) of soup",
+      "genre": "ARCHIVAL > Administrative > Expenditure",
+      "ctrl": "substitute: one lamb, one stewed lamb,",
+      "hard_ok": false,
+      "fails": [
+        "numbers:one",
+        "units:missing:sila3",
+        "invented:substitute,stewed",
+        "lemma_missing:bread,soup",
+        "invented:substitute"
+      ],
+      "fwd": {
+        "n_content": 4,
+        "n_unlicensed": 4,
+        "unlicensed": [
+          "substitute",
+          "lamb",
+          "stewed",
+          "lamb"
+        ],
+        "ratio": 1.0,
+        "score": 1.0,
+        "allowed_n": 354,
+        "tier": "per_sign"
+      },
+      "fwd_over": true,
+      "fwd_min3": true,
+      "corpus": {
+        "n_content": 4,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 4,
+        "n_unlicensed": 3,
+        "unlicensed": [
+          "substitute: expected a2-bal|a2bal|a2-bal-e|a2bale|pu-u2-hi|pu-u2-hu",
+          "lamb: expected u8|si6|u10|u8-e|u8e|ua2",
+          "lamb: expected u8|si6|u10|u8-e|u8e|ua2"
+        ],
+        "unlicensed_words": [
+          "substitute",
+          "lamb",
+          "lamb"
+        ],
+        "expected": {
+          "substitute": [
+            "a2-bal",
+            "a2bal",
+            "a2-bal-e",
+            "a2bale",
+            "pu-u2-hi",
+            "pu-u2-hu"
+          ],
+          "lamb": [
+            "u8",
+            "si6",
+            "u10",
+            "u8-e",
+            "u8e",
+            "ua2"
+          ]
+        },
+        "unmapped": [
+          "stewed"
+        ],
+        "n_unmapped": 1,
+        "ratio": 0.75,
+        "score": 0.75,
+        "tier": "reverse"
+      },
+      "reverse_over": true
+    },
+    {
+      "id": "fair:0239",
+      "cat": "c",
+      "note": "**c** ĝeš \"tree\" read as \"double-hour\"; (a) `%ditto` leak",
+      "slice": "Ur III admin",
+      "atf": "%sux 1 jesz 0.0.5",
+      "ref": "1 tree: 5 ban (50 L),",
+      "genre": "ARCHIVAL > Administrative",
+      "ctrl": "%ditto 1 double-hour 0;01 05",
+      "hard_ok": false,
+      "fails": [
+        "numbers:1",
+        "numbers:0",
+        "numbers:01",
+        "numbers:05",
+        "invented:ditto,double-hour",
+        "invented:ditto"
+      ],
+      "fwd": {
+        "n_content": 2,
+        "n_unlicensed": 2,
+        "unlicensed": [
+          "ditto",
+          "double-hour"
+        ],
+        "ratio": 1.0,
+        "score": 1.0,
+        "allowed_n": 109,
+        "tier": "per_sign"
+      },
+      "fwd_over": true,
+      "fwd_min3": true,
+      "corpus": {
+        "n_content": 2,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 2,
+        "n_unlicensed": 2,
+        "unlicensed": [
+          "ditto: expected 02-isz|02isz|min-szu2|minszu2|szu-bi-asz-am3|szubiaszam3",
+          "double-hour: expected minkila2|mulmesgam3|mulmesgam3a|minane|minqaq|mulmes"
+        ],
+        "unlicensed_words": [
+          "ditto",
+          "double-hour"
+        ],
+        "expected": {
+          "ditto": [
+            "02-isz",
+            "02isz",
+            "min-szu2",
+            "minszu2",
+            "szu-bi-asz-am3",
+            "szubiaszam3"
+          ],
+          "doublehour": [
+            "minkila2",
+            "mulmesgam3",
+            "mulmesgam3a",
+            "minane",
+            "minqaq",
+            "mulmes"
+          ]
+        },
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 1.0,
+        "score": 1.0,
+        "tier": "reverse"
+      },
+      "reverse_over": true
+    },
+    {
+      "id": "fair:0262",
+      "cat": "b",
+      "note": "**b** gold/silver and shorter wording; not a nonsense line",
+      "slice": "Ur III admin",
+      "atf": "%sux ku3-dim2-me-esz2",
+      "ref": "they are the goldsmiths.",
+      "genre": "ARCHIVAL > Administrative > Inventories",
+      "ctrl": "the silversmiths",
+      "hard_ok": true,
+      "fails": [],
+      "fwd": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 1246,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0265",
+      "cat": "c",
+      "note": "**c** invented \"subtotal\" / `§ 3`; leftover ATF *aszgab*; hired vs \"type\"",
+      "slice": "Ur III admin",
+      "atf": "%sux 0 aszgab huj-ja2",
+      "ref": "0 hired leather worker,",
+      "genre": "ARCHIVAL > Administrative > Inventories",
+      "ctrl": "subtotal, aszgab-workers, huŋŋa-laborers,",
+      "hard_ok": false,
+      "fails": [
+        "invented:subtotal"
+      ],
+      "fwd": {
+        "n_content": 2,
+        "n_unlicensed": 2,
+        "unlicensed": [
+          "subtotal",
+          "a-laborers"
+        ],
+        "ratio": 1.0,
+        "score": 1.0,
+        "allowed_n": 57,
+        "tier": "per_sign"
+      },
+      "fwd_over": true,
+      "fwd_min3": true,
+      "corpus": {
+        "n_content": 2,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 2,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "subtotal: expected kel3|kil3|kin4|nin3|ga-ar3|gaar3"
+        ],
+        "unlicensed_words": [
+          "subtotal"
+        ],
+        "expected": {
+          "subtotal": [
+            "kel3",
+            "kil3",
+            "kin4",
+            "nin3",
+            "ga-ar3",
+            "gaar3"
+          ]
+        },
+        "unmapped": [
+          "a-laborers"
+        ],
+        "n_unmapped": 1,
+        "ratio": 0.5,
+        "score": 0.5,
+        "tier": "reverse"
+      },
+      "reverse_over": true
+    },
+    {
+      "id": "fair:0148",
+      "cat": "a",
+      "note": "**a** leaked `%sux` / `%šu` language tag into English",
+      "slice": "Ur III admin",
+      "atf": "%sux ummux 6",
+      "ref": "for 6 containers (?)",
+      "genre": "ARCHIVAL > Administrative > Receipts",
+      "ctrl": "%šu-ummu 6",
+      "hard_ok": false,
+      "fails": [
+        "numbers:6",
+        "langtag:%šu"
+      ],
+      "fwd": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 3,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0576",
+      "cat": "c",
+      "note": "**c** wrong tree (all three arms; S-raw had \"taškarin wood\")",
+      "slice": "lexical, OB",
+      "atf": "{gesz}taszkarin",
+      "ref": "boxwood",
+      "genre": "Lexical",
+      "ctrl": "tamarisk",
+      "hard_ok": false,
+      "fails": [
+        "lemma_missing:boxwood"
+      ],
+      "fwd": {
+        "n_content": 1,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "tamarisk"
+        ],
+        "ratio": 1.0,
+        "score": 1.0,
+        "allowed_n": 6,
+        "tier": "per_sign"
+      },
+      "fwd_over": true,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 1,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "tamarisk: expected szinig-am3|szinig-am6|szinigam3|szinigam6|szinig-gin7|szinig-sze3"
+        ],
+        "unlicensed_words": [
+          "tamarisk"
+        ],
+        "expected": {
+          "tamarisk": [
+            "szinig-am3",
+            "szinig-am6",
+            "szinigam3",
+            "szinigam6",
+            "szinig-gin7",
+            "szinig-sze3"
+          ]
+        },
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 1.0,
+        "score": 1.0,
+        "tier": "reverse"
+      },
+      "reverse_over": true
+    },
+    {
+      "id": "fair:0534",
+      "cat": "c",
+      "note": "**c** ctrl left the ATF almost untranslated",
+      "slice": "lexical, OB",
+      "atf": "gi-gur in-nu-da gi-gur pisag",
+      "ref": "reed basket for straw",
+      "genre": "Lexical",
+      "ctrl": "Gigur innuda, gigur pisag,",
+      "hard_ok": false,
+      "fails": [
+        "copy_through:Gigur,innuda,gigur,pisag",
+        "common_noun_as_pn:Gigur"
+      ],
+      "fwd": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 2778,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0508",
+      "cat": "a",
+      "note": "**a** added \"For\" and a hyphen",
+      "slice": "lexical, OB",
+      "atf": "{d}nin-ildum2-ma",
+      "ref": "Ninilduma",
+      "genre": "Lexical",
+      "ctrl": "For Nin-ilduma,",
+      "hard_ok": true,
+      "fails": [],
+      "fwd": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 1136,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0377",
+      "cat": "c",
+      "note": "**c** (maybe **d**) damaged ATF; ref chose \"elder\", models chose Abzu",
+      "slice": "lexical, OB",
+      "atf": "ab#-<<szu2{?}>>-ba",
+      "ref": "elder",
+      "genre": "Lexical",
+      "ctrl": "of Abzu",
+      "hard_ok": false,
+      "fails": [
+        "names:Abzu",
+        "lemma_missing:father"
+      ],
+      "fwd": {
+        "n_content": 1,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "abzu"
+        ],
+        "ratio": 1.0,
+        "score": 1.0,
+        "allowed_n": 1955,
+        "tier": "per_sign"
+      },
+      "fwd_over": true,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 1,
+        "n_unlicensed": 1,
+        "unlicensed": [
+          "abzu: expected a-kalam|akalam|nam-abzu|namabzu"
+        ],
+        "unlicensed_words": [
+          "abzu"
+        ],
+        "expected": {
+          "abzu": [
+            "a-kalam",
+            "akalam",
+            "nam-abzu",
+            "namabzu"
+          ]
+        },
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 1.0,
+        "score": 1.0,
+        "tier": "reverse"
+      },
+      "reverse_over": true
+    },
+    {
+      "id": "fair:0460",
+      "cat": "b",
+      "note": "**b** \"my thing\" / \"my possessions\"; ctrl then trails off",
+      "slice": "lexical, EOB",
+      "atf": "nig2-gu10 nig2-luh",
+      "ref": "my thing",
+      "genre": "Lexical",
+      "ctrl": "My possessions ...",
+      "hard_ok": false,
+      "fails": [
+        "lemma_missing:food,basin"
+      ],
+      "fwd": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 351,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 1,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    },
+    {
+      "id": "fair:0949",
+      "cat": "c",
+      "note": "**c** phrase vs the intended PN (and 21st vs 20th / year vs child)",
+      "slice": "other, OB",
+      "atf": "dumu-u4-2(u)#-[kam]",
+      "ref": "Mār-ūm-ešrê",
+      "genre": "Inheritance Documents",
+      "ctrl": "it is the 20th year.",
+      "hard_ok": true,
+      "fails": [],
+      "fwd": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 1956,
+        "tier": "per_sign"
+      },
+      "fwd_over": false,
+      "fwd_min3": false,
+      "corpus": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "ratio": 0.0,
+        "score": 0.0,
+        "allowed_n": 49004,
+        "tier": "corpus_vocab"
+      },
+      "corpus_over": false,
+      "reverse": {
+        "n_content": 0,
+        "n_unlicensed": 0,
+        "unlicensed": [],
+        "unlicensed_words": [],
+        "expected": {},
+        "unmapped": [],
+        "n_unmapped": 0,
+        "ratio": 0.0,
+        "score": 0.0,
+        "tier": "reverse"
+      },
+      "reverse_over": false
+    }
+  ],
+  "panel_summary": {
+    "c": {
+      "label": "real_errors",
+      "hard": {
+        "n": 16,
+        "caught": 12,
+        "ids": [
+          "fair:0591",
+          "fair:0850",
+          "fair:0473",
+          "fair:0409",
+          "fair:1049",
+          "fair:0230",
+          "fair:0243",
+          "fair:0239",
+          "fair:0265",
+          "fair:0576",
+          "fair:0534",
+          "fair:0377"
+        ]
+      },
+      "fwd": {
+        "n": 16,
+        "caught": 14,
+        "ids": [
+          "fair:0591",
+          "fair:0883",
+          "fair:0850",
+          "fair:0849",
+          "fair:0473",
+          "fair:0409",
+          "fair:1049",
+          "fair:0230",
+          "fair:0243",
+          "fair:0239",
+          "fair:0265",
+          "fair:0576",
+          "fair:0534",
+          "fair:0377"
+        ]
+      },
+      "fwd_min3": {
+        "n": 16,
+        "caught": 12,
+        "ids": [
+          "fair:0591",
+          "fair:0850",
+          "fair:0473",
+          "fair:0409",
+          "fair:1049",
+          "fair:0230",
+          "fair:0243",
+          "fair:0239",
+          "fair:0265",
+          "fair:0576",
+          "fair:0534",
+          "fair:0377"
+        ]
+      },
+      "corpus": {
+        "n": 16,
+        "caught": 12,
+        "ids": [
+          "fair:0591",
+          "fair:0850",
+          "fair:0473",
+          "fair:0409",
+          "fair:1049",
+          "fair:0230",
+          "fair:0243",
+          "fair:0239",
+          "fair:0265",
+          "fair:0576",
+          "fair:0534",
+          "fair:0377"
+        ]
+      },
+      "reverse": {
+        "n": 16,
+        "caught": 14,
+        "ids": [
+          "fair:0591",
+          "fair:0883",
+          "fair:0850",
+          "fair:0849",
+          "fair:0473",
+          "fair:0409",
+          "fair:1049",
+          "fair:0230",
+          "fair:0243",
+          "fair:0239",
+          "fair:0265",
+          "fair:0576",
+          "fair:0534",
+          "fair:0377"
+        ]
+      }
+    },
+    "b": {
+      "label": "paraphrases",
+      "hard": {
+        "n": 3,
+        "caught": 1,
+        "ids": [
+          "fair:0460"
+        ]
+      },
+      "fwd": {
+        "n": 3,
+        "caught": 1,
+        "ids": [
+          "fair:0460"
+        ]
+      },
+      "fwd_min3": {
+        "n": 3,
+        "caught": 1,
+        "ids": [
+          "fair:0460"
+        ]
+      },
+      "corpus": {
+        "n": 3,
+        "caught": 1,
+        "ids": [
+          "fair:0460"
+        ]
+      },
+      "reverse": {
+        "n": 3,
+        "caught": 1,
+        "ids": [
+          "fair:0460"
+        ]
+      }
+    },
+    "a": {
+      "label": "formatting",
+      "hard": {
+        "n": 5,
+        "caught": 1,
+        "ids": [
+          "fair:0148"
+        ]
+      },
+      "fwd": {
+        "n": 5,
+        "caught": 1,
+        "ids": [
+          "fair:0148"
+        ]
+      },
+      "fwd_min3": {
+        "n": 5,
+        "caught": 1,
+        "ids": [
+          "fair:0148"
+        ]
+      },
+      "corpus": {
+        "n": 5,
+        "caught": 1,
+        "ids": [
+          "fair:0148"
+        ]
+      },
+      "reverse": {
+        "n": 5,
+        "caught": 1,
+        "ids": [
+          "fair:0148"
+        ]
+      }
+    }
+  },
+  "hand_seed": 20261123
+}

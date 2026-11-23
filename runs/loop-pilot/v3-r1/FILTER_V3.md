@@ -1,6 +1,97 @@
 # Filter v3 offline report (v3-r1)
 
-Written 4:09 PM America/New_York on Nov 22, 2026. CPU only. Module: `runs/loop-pilot/design-v3/filter_v3.py`. Tests: `runs/loop-pilot/design-v3/test_filter_v3.py` (48 passing, including tightened copy-through regressions and paraphrase-mode tests).
+Written 4:09 PM America/New_York on Nov 22, 2026. CPU only. Module: `runs/loop-pilot/design-v3/filter_v3.py`. Tests: `runs/loop-pilot/design-v3/test_filter_v3.py` (**62 passing**, including copy-through, paraphrase-mode, gloss-expansion, reverse-check, and determinative regressions).
+
+
+
+## 2026-11-23 update: expanded gloss, reverse check, flat vocab
+
+Written 3:20 AM EST (America/New_York) on Nov 23, 2026. CPU only. No GPU, no training, no TensorFold. Full tables and the 10-line samples: `FILTER_V3_TIERS.md` and `filter_v3_tiers_report.json`.
+
+### Gloss list size (clean sources only)
+
+Clean ORACC/ePSD-style glossary via `lemma_support` (ETCSL/eBL already excluded) plus `runs/clean-bysa-v4e/train.json` human pairs. Miner: `runs/loop-pilot/design-v3/mine_clean_gloss.py`. Cache: `design-v3/cache/clean_gloss_mine.json.gz`.
+
+From 400,253 train records, **334,966** clean human pairs were used. Excluded: synth 44,308; ETCSL-tagged 11,170 (not mined, even if they appeared in the mix file); empty keys/words 9,809. No eBL, NC, or B2c rows entered the mine.
+
+| list | unique English lemmas |
+|---|---:|
+| Official ORACC/ePSD-style (function words dropped) | **9,670** |
+| After curated synonyms + WordNet on those lemmas | **21,287** |
+| After mined per-sign English (count ≥ 5, PMI ≥ 2.0, official-conflict filter) | **30,684** |
+| Flat clean-human vocab (lemmatized content words) | **49,004** |
+
+Lemmatization uses NLTK WordNetLemmatizer plus the existing irregular map (`built`→`build`, `years`→`year`). Synonyms are curated groups (smear≈anoint/rub, restore≈return, barge-man≈boatman, silversmith≈goldsmith, nam+tar → determine fate) plus conservative same-POS WordNet on the *hypothesis* side. WordNet is **not** used to inflate the allowed set. Per-sign mining does not attach a word to a sign if that word already has a different official home (`sila3` does not inherit `lamb` from `sila4`).
+
+Other filter fixes in this pass: hyphen-split ATF lookup (`du3-en` → `du3`), stop-list no longer uses `fv.STOP_EN` (so `year`/`silver`/`gold` stay content words), determinatives are stripped *before* punctuation (`{na4}ur5` → `ur5`, `{gesz}ma2` → `ma2`), and `{gesz}` licenses “wooden”.
+
+### Three gloss tiers, side by side
+
+`check(..., paraphrase, gloss_tier)` always computes all three flags. In `strict` mode, `gloss_tier` chooses which one becomes `gloss_unlicensed`:
+
+- **`per_sign`** (default): forward official + synonyms + mined list; reject if `n_unlicensed ≥ 2` or `ratio ≥ 0.40`.
+- **`corpus_vocab`**: word not in the flat clean-human vocab; same 2 / 0.40 threshold.
+- **`reverse`**: a content word maps to known signs and *none* of them appear in the ATF (e.g. `lamb: expected u8|si6|…`; words with no mapping get no judgment). Threshold **n ≥ 1**.
+
+Keep rule on arm S is the same as before (disagreement, confidence, word cap, judge ∈ {better, equivalent}) plus the named filter.
+
+| policy | kept of 1,479 | improve-pool filter-ok |
+|---|---:|---:|
+| lenient (hard rejects only) | **1448 (97.9%)** | 3279/4925 (66.6%) |
+| strict forward per-sign | **1302 (88.0%)** | 3012/4925 (61.2%) |
+| strict forward, ratio limb only if n_content ≥ 3 | 1440 (97.4%) | 3260/4925 (66.2%) |
+| strict corpus vocab | 1440 (97.4%) | 3258/4925 (66.2%) |
+| strict reverse (n ≥ 1) | **1238 (83.7%)** | 2802/4925 (56.9%) |
+
+Before this expansion, strict forward kept 1,099 / 1,479 (74.3%). The expanded list recovered **203** arm-S lines.
+
+Forward strict genre keep vs arm S: Administrative 425/461 (92.2%), Royal 186/214 (86.9%), Literary 192/211 (91.0%), Letter 157/188 (83.5%), Lexical 130/165 (78.8%), Medical 133/144 (92.4%), Other 9/10 (90.0%). Admin share of kept: 425/1302 (32.6%). Arm-S filter rejects: gloss_unlicensed 146, copy_through 19, common_noun_as_pn 11, invented 3.
+
+Reverse is harsher in medical (119/144, 82.6%) and letters (148/188, 78.7%). Corpus vocab rejects only 8 extra arm-S lines — too loose to use as a drop.
+
+### 30-line SPOTCHECK panel (ctrl hyps)
+
+Caught = hard reject OR the named gloss threshold. Cat (c) = 16 real errors; (b) = 3 good paraphrases; (a) = 5 formatting.
+
+| check | real errors (c) | paraphrases (b) flagged | formatting (a) |
+|---|---|---|---|
+| hard rejects only | 12/16 | 1/3 | 1/5 |
+| hard + forward per-sign | **14/16** | 1/3 | 1/5 |
+| hard + forward, ratio min 3 | 12/16 | 1/3 | 1/5 |
+| hard + corpus vocab | 12/16 | 1/3 | 1/5 |
+| hard + reverse n≥1 | **14/16** | 1/3 | 1/5 |
+
+The one flagged paraphrase (`fair:0460`) is a pre-existing **hard** `lemma_missing` drop, not a gloss false flag. `fair:0262` (silversmiths) and `fair:1327` (Etemenniguru) are clean on every gloss tier.
+
+`fair:0243` (“stewed lamb” on a sila3 / bread / soup line) is a hard reject *and* both forward (`lamb`, `stewed`) and reverse (`lamb: expected u8|si6|…`; sila3 is not treated as a lamb sign). `fair:0230` (“Subtotal” on `0.0.1 {d}nanna-kam`) is a hard `invented:subtotal` *and* is reverse-flagged. The two extra real-error catches vs hard-only are `fair:0883` and `fair:0849` (short-line forward/reverse). A minimum content length of 3 on the ratio limb drops those two catches and is **not** recommended as the default strict rule.
+
+### Hand check (seed 20261123)
+
+10 random arm-S lines kept under lenient but rejected by **strict forward** (pool n=146):
+
+| # | id | judgment |
+|---|---|---|
+| 1 | P270691:9 `a2 mu-a-sze3` “labor of that year” | **WRONG** — a2 is labor/wages |
+| 2 | P247855:307 “a type of grass” | **BORDERLINE** — “type” is lexical metalanguage |
+| 3 | P333149:130 “gag (is a synonym of): weapon” | **BORDERLINE** — “synonym” is list apparatus |
+| 4 | P270782:5 `nig2-ar3-ra` “niŋaru-allocation” | **BORDERLINE** — ATF-backed loan, split poorly |
+| 5 | P393923:414 `ka-mu-szu-nu` “offerings” | **BORDERLINE** — kamû is not clearly “offerings” |
+| 6 | P263166:79 `nig2-mu10-us2-sa2` “marriage gift” | **WRONG** — this is the marriage-gift term |
+| 7 | P248028:15 `u2-sze-lu-u2` “clear (a field)” | **BORDERLINE** |
+| 8 | P358363:18 `i-sze2-ep` “pay the silver” | **BORDERLINE** |
+| 9 | P270790:7 `szu ti-a` / `{lu2}azlag2` “received, fullers” | **WRONG** — both readings are standard |
+| 10 | P481834:29 `at,-ru-du-szu` “cursed him” | **RIGHT** — ṭarādum is “to send,” not “curse” |
+
+About 3/10 clearly wrong, 1 clearly right, the rest borderline. Residual false rejects are mostly short-line ratio fires and official-list gaps (`a2` “labor”, níg-mu10-us2-sa2, šu ti-a / azlag2).
+
+10 random **strict reverse** rejects (pool n=210): more false flags on unlisted conjugations (`az-za-ki` “I stand”), already-English ATF paraphrases (podium ~ pedestal), and names (`ʿAmmi`). Reverse is the right *detector* for lamb / Subtotal / strong / banquet, but too jumpy as the only strict drop.
+
+The six previously wrong rejects from the Nov 22 hand check: **built, barge-man, years, determine fate, restore** are now kept in both modes; **smear** (`tu-tap-pa-[as]`) is still rejected (the damaged conjugation is not in the official glossary or the mine). The two correct rejects, **strong** vs raṣāpu and **banquet** vs kapru, still reject under forward and under reverse.
+
+### Recommendation
+
+Use **expanded forward per-sign** as the strict-mode reject (chrF phase / Arm B). Record reverse as a FLAG only (do not drop on it yet). Do not use the flat vocab as a reject. Do not add a third training arm. `ratio_min_content=3` is too loose for the official panel.
+
 
 ## Paraphrase mode switch
 
