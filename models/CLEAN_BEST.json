@@ -1,0 +1,95 @@
+{
+  "best": "models/clean-bysa-loop-v3-r1-ctrl/best-chrf",
+  "symlink": "models/clean-bysa-best",
+  "backup": "/mnt/alpaca/model-backup/atf-translate-test/clean-bysa-loop-v3-r1-ctrl",
+  "previous_best": "models/clean-bysa-v4e/best-chrf",
+  "family": "clean-bysa",
+  "promoted": "2026-11-22T14:13:08-0500",
+  "approved_by": "Hayden, 2026-11-22 2:05 PM ET: promote ctrl locally as the internal best clean model; do not change the Unread Atlas site or the API model",
+  "gate": {
+    "n": 965,
+    "n_tablets": 472,
+    "chrf": 34.02,
+    "v4e_chrf": 33.42,
+    "delta_vs_v4e": 0.6,
+    "ci95": [
+      0.14,
+      1.07
+    ],
+    "p_le0": 0.006,
+    "n_boot": 1000,
+    "cluster": "tablet",
+    "verdict": "PASS"
+  },
+  "confirm": {
+    "n": 635,
+    "n_tablets": 318,
+    "chrf": 33.25,
+    "v4e_chrf": 33.09,
+    "delta_vs_v4e": 0.16,
+    "ci95": [
+      -0.27,
+      0.67
+    ],
+    "p_le0": 0.263,
+    "n_boot": 1000,
+    "cluster": "tablet"
+  },
+  "trainer_metrics": {
+    "step": 5000,
+    "chrf_1438": 50.3,
+    "chrf_ur3_251": 68.84,
+    "chrf_name_405": 60.82,
+    "name_exact_405": 77.6
+  },
+  "weights_sha256_16": "36b4ab0f59c94cdc",
+  "not_done": "no publish, HF push, or live-site model swap; models/BEST_MODEL.json and models/best (B4 splice, API/site weights) unchanged; models/clean-bysa-v4e left intact; A/B ob-lit-v1 arms not promoted. Official eval is now strip-on (ctrl 34.32).",
+  "eval_protocol": {
+    "adopted": "2026-11-24T15:32:00-0500",
+    "approved_by": "Hayden, 2026-11-24 3:32 PM ET (widget t1327s4750): adopt tag-strip in official eval; do not promote A/B arms",
+    "TOKFIX_STRIP_LANG_TAGS": "1",
+    "default": "on",
+    "disable_with": "0/false/off/no",
+    "prefix_unchanged": "translate Akkadian to English: ",
+    "official_ctrl_chrf": 34.32,
+    "n": 965,
+    "n_tablets": 472,
+    "n_boot": 1000,
+    "cluster": "tablet",
+    "vs_previous_strip_off": {
+      "previous_chrf": 34.02,
+      "delta": 0.3,
+      "ci95": [
+        0.06,
+        0.56
+      ],
+      "note": "same ctrl weights (v3-r1), preprocessing only; not a new checkpoint"
+    },
+    "slices": {
+      "literary": {
+        "strip_off": 30.39,
+        "strip_on": 30.89
+      },
+      "ebl": {
+        "strip_off": 27.2,
+        "strip_on": 27.86
+      },
+      "ur3": {
+        "strip_off": 32.0,
+        "strip_on": 32.87
+      },
+      "c1438_dedup": {
+        "strip_off": 49.53,
+        "strip_on": 49.53
+      }
+    },
+    "arms_not_promoted": {
+      "A3000_strip_on": 33.8,
+      "B1000_strip_on": 33.74,
+      "B5000_strip_on": 33.96,
+      "best_arm_vs_old_34_02": "B5000 -0.06 [-0.59, 0.52], no pass"
+    },
+    "confirm_scored": false,
+    "source": "runs/loop-pilot/ob-lit-v1/STRIP_RESCORE.md"
+  }
+}
