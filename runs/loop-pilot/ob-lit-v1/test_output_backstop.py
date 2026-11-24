@@ -70,3 +70,11 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+
+def test_parenthetical_subtotal_label_does_not_leave_a_stray_paren():
+    rec = OB.apply_backstop("5(u) 4(disz)", "(Subtotal:) 54 (lines)")
+    assert rec["changed"]
+    assert rec["cleaned"] == "54 (lines)"
+    rec2 = OB.apply_backstop("5(u) 4(disz)", "(subtotal:) 40 (shekels)")
+    assert rec2["cleaned"] == "40 (shekels)"
+

@@ -42,6 +42,8 @@ HEADER_LEAK_RE = re.compile(
     )
     \s* :
     \s*
+    [)\]]*
+    \s*
     """
 )
 
